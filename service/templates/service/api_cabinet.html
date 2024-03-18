@@ -1,0 +1,464 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>znak.app</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="{% static 'style/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <style>
+        .center-block {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 45vh;
+            width: 900vh;
+        }
+
+        .alert-info {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 20px;
+            border-radius: 5px;
+            font-size: 20px;
+            text-align:center;
+            margin:40px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-white py-3 md:pt-4 md:pb-6 xl:py-5" x-data>
+        <div class="container">
+            <div class="flex items-center justify-between">
+                <div class="w-[160px] md:w-auto">
+                    <div class="mb-2">
+                        <a href="{% url 'homepage' %}">
+                            <img class="w-[160px] md:w-[224px]" src="{% static 'img/logo.svg' %}" alt="Логотип" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="text-[10px] md:text-xs leading-tight">Сервис удаления водяных знаков с объявлений</div>
+                </div>
+
+                <div class="hidden xl:block">
+                    <nav class="flex flex-col md:flex-row gap-10">
+                        <a href="{% url 'homepage' %}#how-works">Как работает</a>
+                        <a href="{% url 'price'%}">Стоимость</a>
+                        <a href="{% url 'tg_info'%}">Telegram Bot</a>
+                        <a href="{% url 'api_info'%}">API</a>
+                    </nav>
+                </div>
+
+                <div class="hidden md:flex items-center gap-10 xl:gap-20">
+                    <div>
+                        <a class="btn-a" href="#" @click.prevent="$dispatch('open-modal-upload')">Удалить знаки</a>
+                    </div>
+
+                    <div class="hidden xl:block relative" x-data="{ show: false }">
+                        <div class="flex items-center gap-2">
+                            <div class="uppercase">ru</div>
+                            <button @click.prevent="show = !show">
+                                <svg width="35" height="36" viewBox="0 0 35 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.583008" y="1.21289" width="33.5741" height="33.5741" rx="2.75"
+                                        fill="white" stroke="#6EBEEE" stroke-width="0.5" />
+                                    <path d="M12.1846 17.2593L17.3698 21.7037L22.5549 17.2593" stroke="black"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="absolute z-10 top-0 translate-y-full left-1/2 transform -translate-x-1/2 bg-white border border-blue-410 rounded overflow-hidden divide-y divide-blue-410 w-[112px]"
+                            x-show="show" @click.outside="show = false" style="display: none">
+                            <a class="block py-1 px-3 text-[10px] hover:bg-blue-50" href=""
+                                @click.prevent="show = false">KZ</a>
+                            <a class="block py-1 px-3 text-[10px] hover:bg-blue-50" href=""
+                                @click.prevent="show = false">Русский</a>
+                        </div>
+                    </div>
+
+                    <div class="relative" x-data="{ show: false }">
+                        <button type="button" @click.prevent="show = !show">
+                            {% if user_id %}
+                                <span class="hidden md:inline underline">{{user_id}}</span>
+                            {% endif %}
+                            <svg class="inline-block md:hidden" width="41" height="40" viewBox="0 0 41 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1.40723" y="1" width="38" height="38" rx="12.5" fill="white" stroke="#6EBEEE"
+                                    stroke-width="2" />
+                                <g clip-path="url(#clip0_101_3987)">
+                                    <path
+                                        d="M23.2672 19.7607C24.7487 18.849 25.7059 17.0484 25.7059 15.3846C25.7059 13.0142 23.7686 10.3704 21.1475 10.3704C18.5264 10.3704 16.5891 13.0142 16.5891 15.3846C16.5891 17.0484 17.5464 18.849 19.0279 19.7607C15.5179 20.6951 12.9424 23.9088 12.9424 27.6923C12.9424 27.943 13.1475 28.1481 13.3982 28.1481H28.8968C29.1475 28.1481 29.3526 27.943 29.3526 27.6923C29.3526 23.9088 26.7771 20.6951 23.2672 19.7607ZM17.5008 15.3846C17.5008 13.037 19.4381 11.282 21.1475 11.282C22.8569 11.282 24.7942 13.037 24.7942 15.3846C24.7942 17.7322 22.8569 19.4872 21.1475 19.4872C19.4381 19.4872 17.5008 17.7322 17.5008 15.3846ZM13.8769 27.2365C14.1048 23.4302 17.2957 20.3989 21.1475 20.3989C24.9994 20.3989 28.1902 23.4302 28.4182 27.2365H13.8769Z"
+                                        fill="#525252" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_101_3987">
+                                        <rect width="17.7778" height="17.7778" fill="white"
+                                            transform="translate(12.2588 10.3704)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+
+                        <!--Menu-->
+                        <div class="absolute z-10 top-14 right-0" @click.outside="show = false" x-show="show"
+                            x-transition style="display: none">
+                            <div
+                                class="bg-white shadow-2xl border border-blue-500 rounded-[10px] w-[240px] flex-shrink-0 py-4">
+                                <div class="py-2 px-4 hover:bg-blue-50 text-lg font-semibold"><a href={% url 'cabinet' user_id=user_id%}>Главный экран<a></div>
+                                <div class="py-2 pl-4 pr-10">
+                                    <div class="h-px bg-blue-500"></div>
+                                </div>
+
+                                <div class="mb-2">
+                                    <ul>
+                                        <li><a class="block py-2 pl-4 pr-10 hover:bg-blue-50" href="{% url 'price-cabinet' user_id=user_id %}">Сменить тариф</a></li>
+                                        <li><a class="block py-2 pl-4 pr-10 hover:bg-blue-50" href="{% url 'api_cabinet' user_id=user_id %}">Ключ API</a></li>
+                                    </ul>
+                                    <div class="py-2 pl-4 pr-10">
+                                        <div class="h-px bg-blue-500"></div>
+                                    </div>
+                                    <ul>
+                                        <li><a class="block py-2 pl-4 pr-10 hover:bg-blue-50" href="{% url 'profile' user_id=user_id %}">Изменить
+                                                профиль</a></li>
+                                        <li><a class="block py-2 pl-4 pr-10 hover:bg-blue-50" href="{% url 'logout' %}">Выход</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="flex items-center md:hidden">
+                    <div style="margin-right:10px;">
+                        <div class="uppercase">ru</div>
+                    </div>
+
+                    <div class="relative" x-data="{ show: false }">
+                        <button type="button" @click.prevent="show = !show">
+                            {% if user_id %}
+                                <span class="hidden md:inline underline">{{user_id}}</span>
+                            {% endif %}
+                            <svg class="inline-block md:hidden " width="41" height="40" viewBox="0 0 41 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;">
+                                <rect x="1.40723" y="1" width="38" height="38" rx="12.5" fill="white" stroke="#6EBEEE"
+                                    stroke-width="2" />
+                                <g clip-path="url(#clip0_101_3987)">
+                                    <path
+                                        d="M23.2672 19.7607C24.7487 18.849 25.7059 17.0484 25.7059 15.3846C25.7059 13.0142 23.7686 10.3704 21.1475 10.3704C18.5264 10.3704 16.5891 13.0142 16.5891 15.3846C16.5891 17.0484 17.5464 18.849 19.0279 19.7607C15.5179 20.6951 12.9424 23.9088 12.9424 27.6923C12.9424 27.943 13.1475 28.1481 13.3982 28.1481H28.8968C29.1475 28.1481 29.3526 27.943 29.3526 27.6923C29.3526 23.9088 26.7771 20.6951 23.2672 19.7607ZM17.5008 15.3846C17.5008 13.037 19.4381 11.282 21.1475 11.282C22.8569 11.282 24.7942 13.037 24.7942 15.3846C24.7942 17.7322 22.8569 19.4872 21.1475 19.4872C19.4381 19.4872 17.5008 17.7322 17.5008 15.3846ZM13.8769 27.2365C14.1048 23.4302 17.2957 20.3989 21.1475 20.3989C24.9994 20.3989 28.1902 23.4302 28.4182 27.2365H13.8769Z"
+                                        fill="#525252" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_101_3987">
+                                        <rect width="17.7778" height="17.7778" fill="white"
+                                            transform="translate(12.2588 10.3704)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+
+                        <!--Menu-->
+                        <div class="absolute z-10 top-14 right-0" @click.outside="show = false" x-show="show"
+                            x-transition style="display: none">
+                            <div
+                                class="bg-white shadow-2xl border border-blue-500 rounded-[10px] w-[240px] flex-shrink-0 py-4">
+                                <div class="py-2 px-4 hover:bg-blue-50 text-lg font-semibold"><a href={% url 'cabinet' user_id=user_id%}>Главный экран<a></div>
+                                <div class="py-2 pl-4 pr-10">
+                                    <div class="h-px bg-blue-500"></div>
+                                </div>
+
+                                <div class="mb-2">
+                                    <ul>
+                                        <li><a class="block py-2 pl-4 pr-10 hover:bg-blue-50" href="{% url 'price-cabinet' user_id=user_id %}">Сменить тариф</a></li>
+                                        <li><a class="block py-2 pl-4 pr-10 hover:bg-blue-50" href="{% url 'api_cabinet' user_id=user_id %}">Ключ API</a></li>
+                                        <li><a class="block py-2 pl-4 pr-10 hover:bg-blue-50" href="{% url 'partner' user_id=user_id %}">Партнерка</a></li>
+                                        <li><a class="block py-2 pl-4 pr-10 hover:bg-blue-50" href="{% url 'history' user_id=user_id %}">История очисток</a></li>
+                                    </ul>
+                                    <div class="py-2 pl-4 pr-10">
+                                        <div class="h-px bg-blue-500"></div>
+                                    </div>
+                                    <ul>
+                                        <li><a class="block py-2 pl-4 pr-10 hover:bg-blue-50" href="{% url 'profile' user_id=user_id %}">Изменить
+                                                профиль</a></li>
+                                        <li><a class="block py-2 pl-4 pr-10 hover:bg-blue-50" href="{% url 'logout' %}">Выход</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="menuButton">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="50" height="50" rx="10" fill="#EDF3F7" />
+                            <rect x="10" y="19" width="29" height="3" rx="1.5" fill="#0874B4" />
+                            <rect x="10" y="24" width="29" height="3" rx="1.5" fill="#0874B4" />
+                            <rect x="10" y="29" width="29" height="3" rx="1.5" fill="#0874B4" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hidden md:flex xl:hidden justify-between items-center mt-8">
+                <nav class="flex items-center gap-5">
+                    <a href="{% url 'homepage' %}#how-works">Как работает</a>
+                    <a href="{% url 'price'%}">Стоимость</a>
+                    <a href="{% url 'tg_info'%}">Telegram Bot</a>
+                    <a href="{% url 'api_info'%}">API</a>
+                </nav>
+            </div>
+
+            <div class="hidden md:flex md:hidden justify-between items-center mt-8" id="menu">
+                <nav class="flex items-center gap-5" style="flex-direction: column;">
+                    <a href="{% url 'homepage' %}#how-works">Как работает</a>
+                    <a href="{% url 'price'%}">Стоимость</a>
+                    <a href="{% url 'tg_info'%}">Telegram Bot</a>
+                    <a href="{% url 'api_info'%}">API</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div>
+
+        <!--Главный экран-->
+        <section class="bg-blue-50 pt-8 md:pt-[52px] pb-6 md:pb-[78px] overflow-hidden">
+            <div class="container relative">
+                <div
+                    class="hidden md:block w-[178px] md:w-[380px] xl:w-[450px] h-[178px] md:h-[380px] xl:h-[450px] rounded-full border border-blue-500 absolute bottom-[200px] md:-top-[350px] xl:top-0 left-4 md:left-auto md:right-0 xl:left-auto xl:right-[220px] transform -translate-x-1/2 md:translate-x-[20px] xl:translate-x-full">
+                </div>
+                <div
+                    class="hidden md:block w-[178px] md:w-[240px] xl:w-[420px] h-[178px] md:h-[240px] xl:h-[420px] rounded-full border border-blue-500 absolute bottom-[200px] md:-top-[220px] xl:top-[60px] right-4 md:right-0 xl:right-10 transform translate-x-1/2 md:translate-x-[100px] xl:translate-x-full">
+                </div>
+
+                <div class="hidden md:block xl:hidden mb-10">
+                    <h1 class="md:text-3xl font-semibold">Тарифы</h1>
+                </div>
+
+                <!--Nav-->
+                <div class="flex md:gap-5 xl:gap-8 relative mb-12 xl:mb-4">
+                    <div
+                        class="hidden md:block bg-white border border-blue-500 rounded-[10px] w-[200px] flex-shrink-0 py-4 h-min">
+                        {% if user_id %}
+                        <div class="py-2 px-4 hover:bg-blue-50 text-lg font-semibold"><a href={% url 'cabinet' user_id=user_id%}>Главный экран<a></div>
+                        <div class="py-2 px-4">
+                            <div class="h-px bg-blue-500"></div>
+                        </div>
+
+                        <div class="mb-2">
+                            <ul>
+                                <li><a class="block py-2 px-4 hover:bg-blue-50" href="{% url 'price-cabinet' user_id=user_id %}">Тарифы</a></li>
+                                <li><a class="block py-2 px-4 hover:bg-blue-50" href="{% url 'api_cabinet' user_id=user_id %}">Ключ API</a></li>
+                                <li><a class="block py-2 px-4 hover:bg-blue-50" href="{% url 'partner' user_id=user_id %}">Партнерка</a></li>
+                                <li><a class="block py-2 px-4 hover:bg-blue-50" href="{% url 'history' user_id=user_id %}">История очисток</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <a class="block py-2 px-4 text-blue-600 hover:bg-blue-50" href="{% url 'profile' user_id=user_id %}">Изменить профиль</a>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="center-block">
+                            <div class="alert alert-info" role="alert">
+                                <p> В разработке </p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="pt-6 pb-10 xl:py-[56px]" x-data>
+        <div class="container">
+            <div class="flex flex-col md:flex-row xl:items-center md:justify-between mb-9 md:mb-12 xl:mb-20">
+                <div class="hidden md:block">
+                    <div class="mb-2">
+                        <a href="">
+                            <img src="{% static 'img/logo.svg' %}" alt="Логотип" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="text-xs">Сервис удаления водяных знаков с объявлений</div>
+                </div>
+
+                <div class="hidden xl:block mb-9 md:mb-0">
+                    <nav class="flex flex-col xl:flex-row gap-3 md:gap-10 text-sm md:text-base">
+                        <a href="#how-works">Как работает</a>
+                        <a href="{% url 'price'%}">Стоимость</a>
+                        <a href="{% url 'tg_info'%}">Telegram Bot</a>
+                        <a href="{% url 'api_info'%}">API</a>
+                    </nav>
+                </div>
+
+                <div class="flex items-center gap-20">
+                    <div>
+                        <a class="btn-a" href="#" @click.prevent="$dispatch('open-modal-upload')">Удалить знаки</a>
+                    </div>
+
+                    <div class="hidden xl:block relative" x-data="{ show: false }">
+                        <div class="flex items-center gap-2">
+                            <div class="uppercase">ru</div>
+                            <button @click.prevent="show = !show">
+                                <svg width="35" height="36" viewBox="0 0 35 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.583008" y="1.21289" width="33.5741" height="33.5741" rx="2.75"
+                                        fill="white" stroke="#6EBEEE" stroke-width="0.5" />
+                                    <path d="M12.1846 17.2593L17.3698 21.7037L22.5549 17.2593" stroke="black"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="absolute z-10 top-0 translate-y-full left-1/2 transform -translate-x-1/2 bg-white border border-blue-410 rounded overflow-hidden divide-y divide-blue-410 w-[112px]"
+                            x-show="show" @click.outside="show = false" style="display: none">
+                            <a class="block py-1 px-3 text-[10px] hover:bg-blue-50" href=""
+                                @click.prevent="show = false">KZ</a>
+                            <a class="block py-1 px-3 text-[10px] hover:bg-blue-50" href=""
+                                @click.prevent="show = false">Русский</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden md:block xl:hidden mb-[50px]">
+                <nav class="flex gap-x-9">
+                    <a href="#how-works">Как работает</a>
+                    <a href="{% url 'price'%}">Стоимость</a>
+                    <a href="{% url 'tg_info'%}">Telegram Bot</a>
+                    <a href="{% url 'api_info'%}">API</a>
+                </nav>
+            </div>
+
+            <div class="flex flex-col md:flex-row flex-wrap xl:flex-nowrap gap-6 md:gap-10 justify-between">
+                <div
+                    class="flex flex-col md:flex-row md:w-full xl:w-auto gap-2 md:gap-8 text-[10px] md:text-xs text-gray-500 md:text-black flex-shrink-0 order-3 md:order-1">
+                    <a href="{% static 'terms_of_use.pdf' %}" target="_blank">Пользовательское соглашение</a>
+                    {% comment %} <a href="">Политика конфиденциальности</a> {% endcomment %}
+                    <div>© znak.app 2023</div>
+                </div>
+
+                {% comment %} <div class="text-gray-500 text-[10px] order-2 md:w-2/3 xl:w-[410px]">
+                    Товарищество с ограниченной ответственностью "FORREALTOR (ФОРРИЭЛТОР)"
+                    Местонахождение: Казахстан, город Алматы, Медеуский район, Проспект Достык, здание 43, почтовый
+                    индекс 050010
+                </div> {% endcomment %}
+
+                <div class="flex items-center gap-8 flex-shrink-0 order-1 md:order-3">
+                    <div class="text-xs">
+                        Не работает сервис? <br>Напишите
+                    </div>
+
+                    <div>
+                        <a href="">
+                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="26" height="26" rx="13" fill="#0874B4" />
+                                <path
+                                    d="M17.0198 8.77767L7.29405 12.7851C6.90267 12.9717 6.77024 13.3454 7.19941 13.5483L9.69454 14.3955L15.7273 10.4117C16.0567 10.1616 16.3939 10.2283 16.1038 10.5034L10.9224 15.5161L10.7596 17.6375C10.9104 17.9651 11.1864 17.9666 11.3625 17.8038L12.796 16.3545L15.2511 18.3188C15.8213 18.6796 16.1316 18.4468 16.2542 17.7857L17.8646 9.6382C18.0318 8.82441 17.7466 8.46585 17.0198 8.77767Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="block md:hidden w-[162px] order-4">
+                    <div class="mb-2">
+                        <a href="">
+                            <img src="{% static 'img/logo.svg' %}" alt="Логотип" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="text-[10px]">Сервис удаления водяных знаков с объявлений</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Modals-->
+    <div>
+        <div x-data="{ show: false }" @open-modal-upload.window="show = true">
+            <div class="fixed top-0 left-0 w-full h-full" x-show="show" x-transition style="display: none">
+                <div class="absolute top-0 left-0 w-full h-full bg-slate-950/75 backdrop-blur-sm" x-show="show"></div>
+                <div class="absolute top-10 left-1/2 transform -translate-x-1/2 w-full md:w-[720px]" x-show="show"
+                    @click.outside="show = false; modalClosed()">
+                    <div
+                        class="bg-white border border-black rounded-[10px] shadow-2xl pt-9 pb-2 md:pb-12 px-5 md:px-12 relative max-w-[720px]">
+                        <div class="absolute top-[10px] md:top-4 right-[10px] md:right-4">
+                            <button type="button" @click.prevent="show = false; modalClosed()">
+                                <svg width="41" height="41" viewBox="0 0 41 41" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.25" y="0.25" width="40.5" height="40.5" rx="2.75" fill="white"
+                                        stroke="#6EBEEE" stroke-width="0.5" />
+                                    <path d="M14 14L27 27" stroke="black" stroke-linecap="round" />
+                                    <path d="M27 14L14 27" stroke="black" stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+    
+                        <div class="">
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                            <div class="text-xl md:text-2xl font-semibold text-center md:text-left mb-2 md:mb-12">
+                                Удалить знаки</div>
+    
+                            <div class="text-center md:text-left px-2 md:px-0">
+                                <label for="link-b"
+                                    class="inline-block text-sm md:text-lg text-center md:text-left mb-5 md:mb-6">
+                                    Вставьте ссылку на&nbsp;объявление <br class="inline md:hidden">с&nbsp;доски
+                                    объявления
+                                </label>
+                                <div class="upload-a mb-5">
+                                    <input id="link-b" class="upload-a__input w-full md:w-[400px] md:-mr-4" type="text"
+                                        placeholder="Вставьте ссылку" name="link_input">
+                                    <div
+                                        class="text-xs text-gray-500 text-center xl:text-left inline-block md:hidden my-5 max-w-[240px] xl:max-w-none">
+                                        Внимание: даже если полоса загрузки дошла до&nbsp;100%, не&nbsp;покидайте
+                                        ресурс, <br class="hidden xl:inline">
+                                        а&nbsp;дождитесь выгрузки фото. Обычно это занимает не&nbsp;более 10&nbsp;секунд
+                                    </div>
+                                    <button type="submit" class="upload-a__button w-full md:w-auto"
+                                        onclick="loadingAnimation()">Скачать</button>
+                                </div>
+                                <div class="text-xs text-gray-500 text-center md:text-left hidden md:block">
+                                    Внимание: даже если полоса загрузки дошла до&nbsp;100%, не&nbsp;покидайте ресурс,
+                                    <br class="hidden md:inline">
+                                    а&nbsp;дождитесь выгрузки фото. Обычно это занимает не&nbsp;более 10&nbsp;секунд
+                                </div>
+                            </div>
+                            <!-- Загрузчик выполнения обработчки изображения -->
+                            <div id="" class="loaderAnimation w-[100%] flex-row justify-between items-center"
+                                style="display: none">
+                                <div
+                                    class="bg-red-400 w-[100%] h-[14px] md-5 mt-10 rounded-[10px] flex-row justify-between items-center overflow-hidden ">
+                                    <div class="bg-red-550 w-[40%] h-[100%]"></div>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script>
+        menuButton.addEventListener('click', function() {
+            const menuButton = document.getElementById('menuButton');
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+
+</html>

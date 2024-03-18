@@ -1,0 +1,1522 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>znak.app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="{% static 'style/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <link rel="shortcut icon" href="{% static 'img/logo.svg' %}" type="image/x-icon">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    
+        ym(96578911, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/96578911" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+    <header class="bg-white py-3 md:pt-4 md:pb-6 xl:py-5" x-data>
+        <div class="container">
+            <div class="flex items-center justify-between">
+                <div class="w-[160px] md:w-auto">
+                    <div class="mb-2">
+                        <a href="">
+                            <img class="w-[160px] md:w-[224px]" src="{% static 'img/logo.svg' %}" alt="Логотип" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="text-[10px] md:text-xs leading-tight">Сервис удаления водяных знаков с объявлений</div>
+                </div>
+
+                <div class="hidden xl:block">
+                    <nav class="flex flex-col md:flex-row gap-10">
+                        <a href="#how-works">Как работает</a>
+                        <a href="{% url 'price'%}">Стоимость</a>
+                        <a href="{% url 'tg_info'%}">Telegram Bot</a>
+                        <a href="{% url 'api_info'%}">API</a>
+                    </nav>
+                </div>
+
+                <div class="hidden md:flex items-center gap-10 xl:gap-20">
+                    <div>
+                        <a class="btn-a" href="#" @click.prevent="$dispatch('open-modal-upload')">Удалить знаки</a>
+                    </div>
+
+                    <div class="hidden xl:block relative" x-data="{ show: false }">
+                        <div class="flex items-center gap-2">
+                            <div class="uppercase">ru</div>
+                            <button @click.prevent="show = !show">
+                                <svg width="35" height="36" viewBox="0 0 35 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.583008" y="1.21289" width="33.5741" height="33.5741" rx="2.75"
+                                        fill="white" stroke="#6EBEEE" stroke-width="0.5" />
+                                    <path d="M12.1846 17.2593L17.3698 21.7037L22.5549 17.2593" stroke="black"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="absolute z-10 top-0 translate-y-full left-1/2 transform -translate-x-1/2 bg-white border border-blue-410 rounded overflow-hidden divide-y divide-blue-410 w-[112px]"
+                            x-show="show" @click.outside="show = false" style="display: none">
+                            <a class="block py-1 px-3 text-[10px] hover:bg-blue-50" href=""
+                                @click.prevent="show = false">KZ</a>
+                            <a class="block py-1 px-3 text-[10px] hover:bg-blue-50" href=""
+                                @click.prevent="show = false">Русский</a>
+                        </div>
+                    </div>
+
+                    <div>
+                        {% if user_mail %}
+                            <a href="{% url 'cabinet' user_id=user_mail %}" class="hidden md:inline">Личный кабинет</a>
+                        {% else %}
+                            <a class="underline" href="" @click.prevent="$dispatch('open-modal-register')">Регистрация</a>
+                            <span class="text-blue-500">/</span>
+                            <a class="underline" href="" @click.prevent="$dispatch('open-modal-signin')">Войти</a>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="flex items-center md:hidden">
+                    <div style="margin-right:10px;">
+                        <div class="uppercase">ru</div>
+                    </div>
+                    <button id="menuButton">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="50" height="50" rx="10" fill="#EDF3F7" />
+                            <rect x="10" y="19" width="29" height="3" rx="1.5" fill="#0874B4" />
+                            <rect x="10" y="24" width="29" height="3" rx="1.5" fill="#0874B4" />
+                            <rect x="10" y="29" width="29" height="3" rx="1.5" fill="#0874B4" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hidden md:flex xl:hidden justify-between items-center mt-8">
+                <nav class="flex items-center gap-5">
+                    <a href="#how-works">Как работает</a>
+                    <a href="{% url 'price'%}">Стоимость</a>
+                    <a href="{% url 'tg_info'%}">Telegram Bot</a>
+                    <a href="{% url 'api_info'%}">API</a>
+                </nav>
+            </div>
+
+            <div class="hidden md:flex md:hidden justify-between items-center mt-8" id="menu">
+                <nav class="flex items-center gap-5" style="flex-direction: column;">
+                    <a href="#how-works">Как работает</a>
+                    <a href="{% url 'price'%}">Стоимость</a>
+                    <a href="{% url 'tg_info'%}">Telegram Bot</a>
+                    <a href="{% url 'api_info'%}">API</a>
+                    {% if user_mail %}
+                        <a href="{% url 'cabinet' user_id=user_mail %}">Личный кабинет</a>
+                    {% else %}
+                        <a class="" href="" @click.prevent="$dispatch('open-modal-register')">Регистрация</a>
+                        <a class="" href="" @click.prevent="$dispatch('open-modal-signin')">Войти</a>
+                    {% endif %}
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div>
+        <!--Сервис удаления водяных знаков с объявлений-->
+        <section class="bg-blue-50 pt-6 md:pt-14 pb-5 md:pb-14 overflow-hidden">
+            <div class="container relative">
+                <div
+                    class="w-[178px] md:w-[220px] xl:w-[450px] h-[178px] md:h-[220px] xl:h-[450px] rounded-full border border-blue-500 absolute bottom-[200px] md:bottom-[100px] xl:top-0 left-4 md:left-20 xl:left-auto xl:right-[220px] transform -translate-x-1/2 md:translate-x-0 xl:translate-x-full">
+                </div>
+                <div
+                    class="w-[178px] md:w-[220px] xl:w-[420px] h-[178px] md:h-[220px] xl:h-[420px] rounded-full border border-blue-500 absolute bottom-[200px] md:bottom-[260px] xl:top-[60px] right-4 md:right-28 xl:right-10 transform translate-x-1/2 md:translate-x-0 xl:translate-x-full">
+                </div>
+
+                <div class="grid xl:grid-cols-2 relative">
+                    <div class="">
+                        <div class="mb-9 xl:mb-[40px]">
+                            <div class="text-sm md:text-base mb-4 md:mb-6 text-center xl:text-left">
+                                Сервис удаления водяных <br class="inline sm:hidden">знаков с&nbsp;объявлений
+                            </div>
+                            <div
+                                class="text-xl md:text-3xl leading-tight xl:leading-normal text-center xl:text-left mb-6 md:mb-7">
+                                <span class="font-semibold">Заключайте больше сделок</span> <br
+                                    class="hidden md:inline">
+                                с&nbsp;объектами недвижимости скачав все <br class="hidden md:inline">
+                                фото объявлений <span class="text-blue-500 font-semibold">без водяных знаков <br
+                                        class="hidden md:inline">
+                                    и&nbsp;отправив их&nbsp;клиенту раньше других</span>
+                            </div>
+
+                            <div class="max-w-xl mx-auto xl:mx-0 pl-4 md:pl-0">
+                                <div class="grid md:grid-cols-2 md:flex gap-4 md:gap-8">
+                                    <div class="flex gap-3 xl:gap-4">
+                                        <svg class="w-6 xl:w-8 h-6 xl:h-8 flex-shrink-0" viewBox="0 0 32 32" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="16" cy="16" r="16" fill="url(#paint0_linear_1_4)" />
+                                            <circle cx="16" cy="16" r="16" fill="url(#paint1_linear_1_4)" />
+                                            <path
+                                                d="M14.2238 21.1065L10.6238 17.5041C10.4075 17.2877 10.4075 16.9368 10.6238 16.7203L11.407 15.9365C11.6233 15.7201 11.974 15.7201 12.1903 15.9365L14.6154 18.3633L19.8098 13.1654C20.026 12.949 20.3767 12.949 20.593 13.1654L21.3762 13.9492C21.5925 14.1656 21.5925 14.5166 21.3762 14.733L15.007 21.1066C14.7907 21.323 14.44 21.323 14.2238 21.1065Z"
+                                                fill="white" />
+                                            <defs>
+                                                <linearGradient id="paint0_linear_1_4" x1="16" y1="0" x2="16" y2="32"
+                                                    gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FF947E" />
+                                                    <stop offset="1" stop-color="#E34F31" />
+                                                </linearGradient>
+                                                <linearGradient id="paint1_linear_1_4" x1="16" y1="0" x2="16" y2="32"
+                                                    gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#5CBEF8" />
+                                                    <stop offset="1" stop-color="#0874B4" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                        <div class="">
+                                            <div class="font-semibold text-sm">Автоматическая работа</div>
+                                            <div class="text-xs">
+                                                без потери качества <br>и размеров за 15 секунд
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-3 xl:gap-4">
+                                        <svg class="w-6 xl:w-8 h-6 xl:h-8 flex-shrink-0" viewBox="0 0 32 32" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="16" cy="16" r="16" fill="url(#paint0_linear_1_4)" />
+                                            <circle cx="16" cy="16" r="16" fill="url(#paint1_linear_1_4)" />
+                                            <path
+                                                d="M14.2238 21.1065L10.6238 17.5041C10.4075 17.2877 10.4075 16.9368 10.6238 16.7203L11.407 15.9365C11.6233 15.7201 11.974 15.7201 12.1903 15.9365L14.6154 18.3633L19.8098 13.1654C20.026 12.949 20.3767 12.949 20.593 13.1654L21.3762 13.9492C21.5925 14.1656 21.5925 14.5166 21.3762 14.733L15.007 21.1066C14.7907 21.323 14.44 21.323 14.2238 21.1065Z"
+                                                fill="white" />
+                                            <defs>
+                                                <linearGradient id="paint0_linear_1_4" x1="16" y1="0" x2="16" y2="32"
+                                                    gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FF947E" />
+                                                    <stop offset="1" stop-color="#E34F31" />
+                                                </linearGradient>
+                                                <linearGradient id="paint1_linear_1_4" x1="16" y1="0" x2="16" y2="32"
+                                                    gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#5CBEF8" />
+                                                    <stop offset="1" stop-color="#0874B4" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                        <div class="">
+                                            <div class="font-semibold text-sm">Экономия</div>
+                                            <div class="text-xs">
+                                                Оплата за все объявление сразу, <br>
+                                                а не за каждое фото, как в других сервисах
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center xl:text-left px-2 md:px-0">
+                            <label for="link-a"
+                                class="hidden xl:inline-block text-sm md:text-lg text-center xl:text-left mb-5 md:mb-6">
+                                Попробуйте, просто вставьте ссылку на&nbsp;объявление с&nbsp;доски объявления
+                            </label>
+                            <label for="link-a"
+                                class="inline-block xl:hidden text-sm md:text-lg text-center xl:text-left mb-5 md:mb-6">
+                                Вставьте ссылку на&nbsp;объявление <br class="inline md:hidden">с&nbsp;доски объявления
+                            </label>
+                            <form action="" method="POST">
+                            {% csrf_token %}
+                            <div class="upload-a mb-5">
+                                <input id="link-a" class="upload-a__input w-full md:w-[400px] md:-mr-4" type="text"
+                                    placeholder="Вставьте ссылку" name="link_input" required>
+                                <div
+                                    class="text-xs text-gray-500 text-center xl:text-left inline-block md:hidden my-5 max-w-[240px] xl:max-w-none">
+                                    Внимание: даже если полоса загрузки дошла до&nbsp;100%, не&nbsp;покидайте ресурс,
+                                    <br class="hidden xl:inline">
+                                    а&nbsp;дождитесь выгрузки фото. Обычно это занимает не&nbsp;более 10&nbsp;секунд
+                                </div>
+                                <button onclick="loadingAnimation()" type="submit"
+                                    class="upload-a__button w-full md:w-auto">Скачать</button>
+                            </div>
+                            <div class="text-xs text-gray-500 text-center xl:text-left hidden md:block">
+                                Внимание: даже если полоса загрузки дошла до&nbsp;100%, не&nbsp;покидайте ресурс, <br
+                                    class="hidden md:inline">
+                                а&nbsp;дождитесь выгрузки фото. Обычно это занимает не&nbsp;более 10&nbsp;секунд
+                            </div>
+                            </form>
+                            <!-- Загрузчик выполнения обработчки изображения -->
+                            <div id="" class="loaderAnimation w-[100%] flex-row justify-between items-center"
+                                style="display: none">
+                                <div
+                                    class="bg-red-400 w-[100%] h-[14px] md-5 mt-10 rounded-[10px] flex-row justify-between items-center overflow-hidden ">
+                                    <div class="bg-red-550 w-[40%] h-[100%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div>
+                            <img src="{% static 'img/two-photos.png' %}" alt="Две фотографии" loading="lazy">
+                        </div>
+
+                        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+                            <div class="text-sm">Работает с досками <br class="hidden md:inline">объявлений</div>
+                            <div class="flex gap-2">
+                                <img class="xl:w-[60px] xl:h-[60px]" src="{% static 'img/svg/logo-1.svg' %}" alt="Логотип"
+                                     loading="lazy">
+                                <img class="xl:w-[60px] xl:h-[60px]" src="{% static 'img/svg/logo-2.svg' %}" alt="Логотип"
+                                     loading="lazy">
+                                <img class="xl:w-[60px] xl:h-[60px]" src="{% static 'img/svg/logo-3.svg' %}" alt="Логотип"
+                                     loading="lazy">
+                                <img class="xl:w-[60px] xl:h-[60px]" src="{% static 'img/svg/logo-4.svg' %}" alt="Логотип"
+                                     loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Кому подойдет-->
+        <section class="mt-8 xl:mt-28">
+            <div class="container">
+                <div>
+                    <div
+                        class="bg-blue-500 text-white rounded-[10px] relative md:h-[242px] xl:h-auto overflow-hidden xl:overflow-visible">
+                        <div class="absolute top-0 left-0">
+                            <svg width="300" height="366" viewBox="0 0 300 366" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g style="mix-blend-mode:overlay" filter="url(#filter0_f_18_42)">
+                                    <ellipse cx="20" cy="18.5" rx="143" ry="147.5" fill="white" fill-opacity="0.4" />
+                                </g>
+                                <circle cx="10" cy="-25" r="67.5" stroke="white" stroke-opacity="0.5" />
+                                <defs>
+                                    <filter id="filter0_f_18_42" x="-323" y="-329" width="686" height="695"
+                                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                            result="shape" />
+                                        <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_18_42" />
+                                    </filter>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="absolute bottom-0 md:hidden">
+                            <svg width="300" height="375" viewBox="0 0 300 375" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g style="mix-blend-mode:overlay" filter="url(#filter0_f_18_9)">
+                                    <ellipse cx="163.5" cy="301.5" rx="146.5" ry="151.5" fill="white"
+                                        fill-opacity="0.6" />
+                                </g>
+                                <defs>
+                                    <filter id="filter0_f_18_9" x="-133" y="0" width="593" height="603"
+                                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                            result="shape" />
+                                        <feGaussianBlur stdDeviation="75" result="effect1_foregroundBlur_18_9" />
+                                    </filter>
+                                </defs>
+                            </svg>
+                        </div>
+
+                        <img class="hidden xl:block absolute bottom-0 right-0 w-[850px]" src="{% static 'img/realtors@lg.png' %}"
+                            alt="Риелторы" loading="lazy">
+
+                        <div class="pt-12 px-6 md:px-12 xl:pt-[52px] xl:pb-[58px] xl:px-[58px] relative">
+                            <h2 class="font-semibold text-lg md:text-3xl text-center md:text-left">Кому подойдет</h2>
+                            <div class="w-[100px] h-[3px] bg-white my-4 md:my-6 mx-auto md:mx-0"></div>
+                            <div class="text-center md:text-left">
+                                Риелторам, брокерам, агентам <br class="hidden md:inline">и&nbsp;прочим специалистам <br
+                                    class="hidden md:inline xl:hidden">по&nbsp;недвижимости
+                            </div>
+                        </div>
+
+                        <img class="hidden md:block xl:hidden absolute top-0 right-0 w-[398px]"
+                             src="{% static 'img/realtors@md.png' %}" alt="Риелторы" loading="lazy">
+                        <img class="block md:hidden w-full relative" src="{% static 'img/realtors@sm.png' %}" alt="Риелторы"
+                             loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Оцените результат удаления-->
+        <section class="pt-6 xl:pt-[90px] mb-8 xl:mb-[90px]">
+            <div class="container">
+                <div>
+                    <div class="mb-8 xl:mb-[60px]">
+                        <h2 class="section-title">Оцените результат удаления</h2>
+                        <div class="section-subtitle">Подвигайте, чтобы увидеть, как точно удаляется лишнее</div>
+                    </div>
+
+                    <div
+                        class="flex flex-col md:flex-row justify-between gap-6 md:gap-10 max-w-[210px] md:max-w-[620px] mx-auto mb-8 md:mb-12">
+                        <div class="flex gap-4">
+                            <div>
+                                <svg class="w-5 md:w-9 h-5 md:h-9" viewBox="0 0 35 35" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="17.5" cy="17.5" r="17.5" fill="url(#paint0_linear_4_81)" />
+                                    <circle cx="17.5" cy="17.5" r="17.5" fill="url(#paint1_linear_4_81)" />
+                                    <path
+                                        d="M15.5573 23.085L11.6198 19.1449C11.3832 18.9082 11.3832 18.5244 11.6198 18.2876L12.4765 17.4304C12.713 17.1936 13.0966 17.1936 13.3332 17.4304L15.9856 20.0846L21.667 14.3995C21.9035 14.1627 22.2871 14.1627 22.5237 14.3995L23.3803 15.2567C23.6169 15.4934 23.6169 15.8773 23.3803 16.114L16.414 23.0851C16.1774 23.3218 15.7939 23.3218 15.5573 23.085Z"
+                                        fill="white" />
+                                    <defs>
+                                        <linearGradient id="paint0_linear_4_81" x1="8.07692" y1="33.3173" x2="32.6442"
+                                            y2="5.04808" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#65CF8A" />
+                                            <stop offset="1" stop-color="#86E0A7" />
+                                        </linearGradient>
+                                        <linearGradient id="paint1_linear_4_81" x1="17.5" y1="0" x2="17.5" y2="35"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#FF947E" />
+                                            <stop offset="1" stop-color="#E34F31" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="text-sm">Без артефактов <br>и искажения картинки</div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div>
+                                <svg class="w-5 md:w-9 h-5 md:h-9" viewBox="0 0 35 35" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="17.5" cy="17.5" r="17.5" fill="url(#paint0_linear_4_81)" />
+                                    <circle cx="17.5" cy="17.5" r="17.5" fill="url(#paint1_linear_4_81)" />
+                                    <path
+                                        d="M15.5573 23.085L11.6198 19.1449C11.3832 18.9082 11.3832 18.5244 11.6198 18.2876L12.4765 17.4304C12.713 17.1936 13.0966 17.1936 13.3332 17.4304L15.9856 20.0846L21.667 14.3995C21.9035 14.1627 22.2871 14.1627 22.5237 14.3995L23.3803 15.2567C23.6169 15.4934 23.6169 15.8773 23.3803 16.114L16.414 23.0851C16.1774 23.3218 15.7939 23.3218 15.5573 23.085Z"
+                                        fill="white" />
+                                    <defs>
+                                        <linearGradient id="paint0_linear_4_81" x1="8.07692" y1="33.3173" x2="32.6442"
+                                            y2="5.04808" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#65CF8A" />
+                                            <stop offset="1" stop-color="#86E0A7" />
+                                        </linearGradient>
+                                        <linearGradient id="paint1_linear_4_81" x1="17.5" y1="0" x2="17.5" y2="35"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#FF947E" />
+                                            <stop offset="1" stop-color="#E34F31" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="text-sm">Средняя скорость <br>обработки 15-30 секунд</div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="border border-2 xl:border-1 border-blue-500 xl:border-gray-100 rounded-[15px] xl:rounded-2xl w-[1100px] max-w-full mx-auto p-1 xl:p-4">
+                        <div class="slider relative overflow-hidden rounded-[15px] xl:rounded-2xl">
+                            <div class="before absolute left-0 top-0 overflow-hidden w-1/2 h-full">
+                                <img class="w-full h-full object-cover object-left rounded-xl" src="{% static 'img/sample-1.jpg' %}"
+                                    alt="Пример изображения" loading="lazy">
+                            </div>
+                            <div class="after">
+                                <img class="w-full h-full object-cover object-left rounded-xl" src="{% static 'img/sample-2.jpg' %}"
+                                    alt="Пример изображения" loading="lazy">
+                            </div>
+                            <div class="change absolute left-1/2 top-0 z-10 w-[6px] h-full bg-white">
+                                <svg class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                                    width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="25" cy="25" r="25" fill="white" />
+                                    <path d="M36 19L42 25.5L36 32" stroke="#E34F31" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <path d="M14 19L8 25.5L14 32" stroke="#E34F31" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Больше не придется-->
+        <section class="pb-8 xl:pb-[100px]">
+            <div class="container">
+                <div class="mb-6 xl:mb-14">
+                    <h2 class="section-title">Больше не придется</h2>
+                    <div class="section-subtitle">Подвигайте, чтобы увидеть, как точно удаляется лишнее</div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-[10px] md:gap-6 xl:gap-9 max-w-[936px] mx-auto">
+                    <div class="card-a">
+                        <div class="card-a__svg" style="background-image:url({% static 'img/svg/check-1.svg' %});"></div>
+                        <div class="card-a__content">
+                            <span class="font-semibold">Тратить время</span> на ручное <br>удаление водяных знаков
+                        </div>
+                    </div>
+
+                    <div class="card-a">
+                        <div class="card-a__svg" style="background-image:url({% static 'img/svg/check-1.svg' %});"></div>
+                        <div class="card-a__content">
+                            <span class="font-semibold">Терять клиентов</span> из-за долгой отправки подходящего объекта
+                            недвижимости
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Сэкономьте свое время и зарабатывайте больше-->
+        <section class="bg-blue-50 pt-10 xl:pt-[67px] pb-8 xl:pb-[92px]">
+            <div class="container">
+                <div class="mb-8 xl:mb-20">
+                    <h2 class="section-title">Сэкономьте свое время и&nbsp;зарабатывайте больше</h2>
+                    <div class="section-subtitle">Варианты использования</div>
+                </div>
+
+                <div
+                    class="grid xl:grid-cols-2 gap-[10px] md:gap-5 xl:gap-10 mb-9 md:mb-14 xl:mb-24 -mx-[10px] xl:mx-0">
+                    <div class="bg-blue-500 card-b xl:min-h-[486px] relative md:overflow-hidden">
+                        <div class="card-b__wrapper">
+                            <div class="card-b__label">1&nbsp;сценарий</div>
+                            <div class="card-b__title max-w-[336px]">Необходимо отправить <br
+                                    class="hidden md:inline">подборку квартир для клиента</div>
+                            <div class="card-b__divider"></div>
+                            <div class="card-b__content max-w-[290px]">
+                                Вам нужно убрать водяные знаки, чтобы клиент не&nbsp;обратился к&nbsp;собственнику
+                                напрямую и&nbsp;подумал, что это объект из&nbsp;внутренней базы
+                            </div>
+                        </div>
+
+                        <div class="md:hidden absolute bottom-0">
+                            <svg width="320" height="523" viewBox="0 0 320 523" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g style="mix-blend-mode:overlay" filter="url(#filter0_f_22_255)">
+                                    <ellipse cx="158" cy="401" rx="192" ry="191" fill="white" fill-opacity="0.6" />
+                                </g>
+                                <defs>
+                                    <filter id="filter0_f_22_255" x="-244" y="0" width="804" height="802"
+                                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                            result="shape" />
+                                        <feGaussianBlur stdDeviation="105" result="effect1_foregroundBlur_22_255" />
+                                    </filter>
+                                </defs>
+                            </svg>
+                        </div>
+                        <img class="w-full block md:hidden relative" src="{% static 'img/photos-1@sm.png' %}" alt="Фотографии"
+                             loading="lazy">
+
+                        <div class="hidden md:block xl:hidden absolute top-0 right-0">
+                            <svg width="494" height="391" viewBox="0 0 494 391" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g style="mix-blend-mode:overlay" filter="url(#filter0_f_22_307)">
+                                    <ellipse cx="441" cy="247" rx="231" ry="230" fill="white" fill-opacity="0.6" />
+                                </g>
+                                <defs>
+                                    <filter id="filter0_f_22_307" x="0" y="-193" width="882" height="880"
+                                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                            result="shape" />
+                                        <feGaussianBlur stdDeviation="105" result="effect1_foregroundBlur_22_307" />
+                                    </filter>
+                                </defs>
+                            </svg>
+                        </div>
+                        <img class="hidden md:block xl:hidden w-[250px] absolute top-0 right-0"
+                             src="{% static 'img/photos-1@md.png' %}" alt="Фотографии" loading="lazy">
+
+                        <div class="hidden xl:block absolute top-0 right-0">
+                            <svg width="455" height="487" viewBox="0 0 455 487" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g style="mix-blend-mode:overlay" filter="url(#filter0_f_22_367)">
+                                    <ellipse cx="441" cy="247" rx="231" ry="230" fill="white" fill-opacity="0.6" />
+                                </g>
+                                <defs>
+                                    <filter id="filter0_f_22_367" x="0" y="-193" width="882" height="880"
+                                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                            result="shape" />
+                                        <feGaussianBlur stdDeviation="105" result="effect1_foregroundBlur_22_367" />
+                                    </filter>
+                                </defs>
+                            </svg>
+                        </div>
+                        <img class="hidden xl:block w-[228px] absolute top-0 right-0" src="{% static 'img/photos-1@lg.png' %}"
+                            alt="Фотографии" loading="lazy">
+                    </div>
+
+                    <div class="bg-red-550 card-b relative">
+                        <div class="card-b__wrapper relative">
+                            <div class="card-b__label">2&nbsp;сценарий</div>
+                            <div class="card-b__title max-w-[300px]">У&nbsp;клиента нет фото объекта без водяных знаков
+                            </div>
+                            <div class="card-b__divider"></div>
+                            <div class="card-b__content max-w-[354px] space-y-4 md:space-y-6">
+                                <p>Вам нужно срочно отправить фотографии объекта потенциальному покупателю или выставить
+                                    их&nbsp;на&nbsp;сайт</p>
+                                <p>Вместо того, чтобы ехать фотографировать объект, вы&nbsp;скачиваете фото через наш
+                                    сервис и&nbsp;начинаете работу</p>
+                            </div>
+                        </div>
+
+                        <div class="block md:hidden absolute bottom-0">
+                            <svg width="320" height="523" viewBox="0 0 320 523" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g style="mix-blend-mode:overlay" filter="url(#filter0_f_22_270)">
+                                    <ellipse cx="158" cy="401" rx="192" ry="191" fill="white" fill-opacity="0.6" />
+                                </g>
+                                <defs>
+                                    <filter id="filter0_f_22_270" x="-244" y="0" width="804" height="802"
+                                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                            result="shape" />
+                                        <feGaussianBlur stdDeviation="105" result="effect1_foregroundBlur_22_270" />
+                                    </filter>
+                                </defs>
+                            </svg>
+                        </div>
+                        <img class="w-full block md:hidden relative" src="{% static 'img/notebook-1@sm.png' %}" alt="Ноутбук"
+                             loading="lazy">
+
+                        <div class="hidden md:block xl:hidden absolute top-0 right-0">
+                            <svg width="533" height="469" viewBox="0 0 533 469" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g style="mix-blend-mode:overlay" filter="url(#filter0_f_22_322)">
+                                    <circle cx="427.5" cy="206.5" r="217.5" fill="white" fill-opacity="0.8" />
+                                </g>
+                                <defs>
+                                    <filter id="filter0_f_22_322" x="0" y="-221" width="855" height="855"
+                                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                            result="shape" />
+                                        <feGaussianBlur stdDeviation="105" result="effect1_foregroundBlur_22_322" />
+                                    </filter>
+                                </defs>
+                            </svg>
+                        </div>
+                        <img class="w-[300px] hidden md:block xl:hidden absolute top-0 right-0"
+                             src="{% static 'img/notebook-1@md.png' %}" alt="Ноутбук" loading="lazy">
+
+                        <div class="hidden xl:block absolute top-0 right-0">
+                            <svg width="483" height="487" viewBox="0 0 483 487" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g style="mix-blend-mode:overlay" filter="url(#filter0_f_22_382)">
+                                    <circle cx="427.5" cy="272.5" r="217.5" fill="white" fill-opacity="0.8" />
+                                </g>
+                                <defs>
+                                    <filter id="filter0_f_22_382" x="0" y="-155" width="855" height="855"
+                                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                            result="shape" />
+                                        <feGaussianBlur stdDeviation="105" result="effect1_foregroundBlur_22_382" />
+                                    </filter>
+                                </defs>
+                            </svg>
+                        </div>
+                        <img class="w-[282px] hidden xl:block absolute top-0 right-0" src="{% static 'img/notebook-1@lg.png' %}"
+                            alt="Ноутбук" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-5 md:gap-10">
+                    <div class="flex flex-col justify-between h-full">
+                        <div class="mb-6 xl:mb-14">
+                            <div class="w-[100px] xl:w-[200px] h-1 xl:h-[6px] bg-red-550 mx-auto md:mx-0 mb-2 xl:mb-9">
+                            </div>
+                            <div class="xl:text-2xl text-center md:text-left mb-4 xl:mb-9">
+                                В&nbsp;отличие от&nbsp;других сервисов <br><span class="font-semibold">не&nbsp;надо
+                                    вручную выделять объект <br>удаления на&nbsp;каждом фото</span>
+                            </div>
+                            <div class="text-sm xl:text-base text-center md:text-left">
+                                AI&nbsp;видит водяные марки и&nbsp;удаляет их&nbsp;сам
+                            </div>
+                        </div>
+                        <img class="rounded-[10px]" src="{% static 'img/room-1.jpg' %}" alt="Фото комнаты с водяными знаками"
+                             loading="lazy">
+                    </div>
+
+                    <div class="flex flex-col justify-between h-full">
+                        <div class="mb-6 xl:mb-14">
+                            <div class="w-[100px] xl:w-[200px] h-1 xl:h-[6px] bg-red-550 mx-auto md:mx-0 mb-2 xl:mb-9">
+                            </div>
+                            <div class="xl:text-2xl text-center md:text-left mb-4 xl:mb-9">
+                                <span class="font-semibold">Весь функционал сервиса <br>работает на&nbsp;любом
+                                    устройстве</span> <br>прямо в&nbsp;браузере
+                            </div>
+                            <div class="text-sm xl:text-base text-center md:text-left">
+                                От&nbsp;обычного&nbsp;ПК до&nbsp;смартфона и&nbsp;планшета <br
+                                    class="hidden md:inline">на&nbsp;Windows, Mac, iOS и&nbsp;Android в&nbsp;любое время
+                                и&nbsp;месте
+                            </div>
+                        </div>
+                        <img class="rounded-[10px]" src="{% static 'img/screen-1.jpg' %}" alt="Скрин сервиса" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Как работает-->
+        <section id="how-works" class="pt-8 md:pt-12 xl:pt-[100px] pb-10 md:pb-14 xl:pb-[92px]">
+            <div class="container">
+                <div class="mb-9 md:mb-10">
+                    <h2 class="section-title">Как работает</h2>
+                    <div class="section-subtitle">Варианты использования</div>
+                </div>
+
+                <div class="md:h-[378px] mb-8 xl:mb-14">
+                    <div class="mb-8 md:mb-16 xl:mb-[90px] relative md:pt-6 xl:pt-0">
+                        <div class="flex gap-4 xl:gap-9 items-center md:items-start mb-7 xl:mb-[52px]">
+                            <div>
+                                <svg class="w-8 xl:w-[52px] h-8 xl:h-[52px]" viewBox="0 0 52 52" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="26" cy="26" r="26" fill="url(#paint0_linear_0_1)" />
+                                    <path d="M28.692 35H26.48V21.728L23.26 23.24L22.28 21.476L27.208 19.152H28.692V35Z"
+                                        fill="white" />
+                                    <defs>
+                                        <linearGradient id="paint0_linear_0_1" x1="26" y1="0" x2="26" y2="52"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#5CBEF8" />
+                                            <stop offset="1" stop-color="#0874B4" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="text-sm md:text-xl"><span class="font-semibold">Открываете объявление</span>
+                                <br>с&nbsp;которого нужно взять фото
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 xl:gap-9 items-center md:items-start">
+                            <div>
+                                <svg class="w-8 xl:w-[52px] h-8 xl:h-[52px]" viewBox="0 0 52 52" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="26" cy="26" r="26" fill="url(#paint0_linear_0_1)" />
+                                    <path
+                                        d="M26.132 18.788C27.3267 18.788 28.3533 18.9747 29.212 19.348C30.0893 19.7027 30.7707 20.216 31.256 20.888C31.7413 21.56 31.984 22.3627 31.984 23.296C31.984 23.9867 31.844 24.668 31.564 25.34C31.284 26.012 30.836 26.7027 30.22 27.412C29.6227 28.1213 28.82 28.9053 27.812 29.764L23.64 33.264H32.488L32.852 35H20.7V33.404L26.608 28.252C27.3547 27.6173 27.9613 27.048 28.428 26.544C28.8947 26.04 29.24 25.5453 29.464 25.06C29.7067 24.5747 29.828 24.0613 29.828 23.52C29.828 22.568 29.4827 21.8493 28.792 21.364C28.12 20.86 27.224 20.608 26.104 20.608C25.432 20.608 24.8253 20.692 24.284 20.86C23.7427 21.0093 23.2573 21.196 22.828 21.42C22.4173 21.644 22.044 21.8493 21.708 22.036L21.064 20.244C21.5867 19.9267 22.2493 19.6093 23.052 19.292C23.8733 18.956 24.9 18.788 26.132 18.788Z"
+                                        fill="white" />
+                                    <defs>
+                                        <linearGradient id="paint0_linear_0_1" x1="26" y1="0" x2="26" y2="52"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#5CBEF8" />
+                                            <stop offset="1" stop-color="#0874B4" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="text-sm md:text-xl"><span class="font-semibold">Копируете ссылку
+                                    объявления</span>, <br>вставляете в поле <br>и нажимаете кнопку <span
+                                    class="font-semibold">Скачать</span>
+                            </div>
+                        </div>
+
+                        <img class="hidden md:block w-[232px] absolute top-0 right-0 xl:right-[564px]"
+                             src="{% static 'img/logos-1@md.png' %}" alt="Логотипы" loading="lazy">
+                        <a href="#" data-src="https://www.youtube.com/watch?v=p0ggtmXghPg" data-fancybox>
+                            <img class="hidden xl:block w-[602px] absolute top-0 right-0 rounded-[15px] shadow-2xl"
+                                 src="{% static 'img/video-1@lg.jpg' %}" alt="Видео" loading="lazy">
+                        </a>
+                    </div>
+
+                    <div
+                        class="text-xs md:text-base space-y-3 xl:space-y-6 border-l-2 xl:border-l-4 border-red-550 pl-3 xl:pl-5 max-w-[394px]">
+                        <div>Сервис <span class="font-semibold">автоматически обрабатывает все <br
+                                    class="hidden md:inline xl:hidden">фото</span> и&nbsp;формирует архив без водяных
+                            марок</div>
+                        <div>Дополнительно выкачивает текст объявления</div>
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <div class="block md:hidden mb-7">
+                        <img class="mx-auto" src="{% static 'img/logos-1@sm.png' %}" alt="Логотипы" loading="lazy">
+                    </div>
+
+                    <a href="#" data-src="https://www.youtube.com/watch?v=p0ggtmXghPg" data-fancybox>
+                        <img class="block md:hidden rounded-[15px] shadow-2xl" src="{% static 'img/video-1@sm.png' %}" alt="Видео"
+                             loading="lazy">
+                        <img class="hidden md:block xl:hidden w-[602px] mx-auto rounded-[15px] shadow-2xl"
+                             src="{% static 'img/video-1@lg.jpg' %}" alt="Видео" loading="lazy">
+                    </a>
+                </div>
+
+                <div class="max-w-[960px] mx-auto">
+                    <form action="" method="POST">
+                    {% csrf_token %}
+                    <label class="block xl:inline-block text-lg font-medium mb-5 text-center md:text-left"
+                        for="link">Попробуйте</label>
+                    <div class="upload-a mb-5">
+                        <form action="" method="POST">
+                        {% csrf_token %}
+                        <input id="link" class="upload-a__input w-full md:w-[560px] xl:w-[780px] md:-mr-4" type="text"
+                            placeholder="Вставьте ссылку" name="link_input">
+                        <div class="text-xs text-gray-500 text-center block md:hidden my-5">
+                            Внимание: даже если полоса загрузки дошла до&nbsp;100%, не&nbsp;покидайте ресурс,
+                            а&nbsp;дождитесь <br class="hidden md:inline xl:hidden">выгрузки фото. Обычно это занимает
+                            не&nbsp;более
+                            10&nbsp;секунд
+                        </div>
+                        <button class="upload-a__button w-full md:w-auto" onclick="loadingAnimation()" type="submit">Скачать</button>
+                    </div>
+                    <div class="text-xs text-gray-500 hidden md:block text-center">
+                        Внимание: даже если полоса загрузки дошла до&nbsp;100%, не&nbsp;покидайте ресурс,
+                        а&nbsp;дождитесь <br class="hidden md:inline xl:hidden">выгрузки фото. Обычно это занимает
+                        не&nbsp;более
+                        10&nbsp;секунд
+                    </div>
+                    </form>
+                </div>
+                <!-- Загрузчик выполнения обработчки изображения -->
+                <div id="" class="loaderAnimation w-[100%] flex-row justify-between items-center" style="display: none">
+                    <div
+                        class="bg-red-400 w-[100%] h-[14px] md-5 mt-10 rounded-[10px] flex-row justify-between items-center overflow-hidden ">
+                        <div class="bg-red-550 w-[40%] h-[100%]"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Обратная связь от клиентов показывает-->
+        <section class="bg-blue-500 text-white md:h-[458px] xl:min-h-[514px] overflow-hidden">
+            <div class="container relative">
+                <div class="pt-8 md:pt-[50px] xl:pt-[74px]">
+                    <div class="mb-5 xl:mb-8">
+                        <div class="font-semibold text-xl md:text-[30px] text-center md:text-left mb-4 xl:mb-8">Обратная
+                            связь <br>от клиентов показывает</div>
+                        <div class="text-center md:text-left text-sm md:text-base">Что задержка отправки фото на 15
+                            минут увеличивает <br class="hidden md:inline">риск потерять клиента навсегда</div>
+                    </div>
+                    <div class="w-[100px] xl:w-[120px] h-[2px] xl:h-1 mx-auto md:mx-0 bg-white mb-5 xl:mb-[60px]"></div>
+
+                    <div class="space-y-3 md:space-y-6 text-sm md:text-base">
+                        <div class="text-center md:text-left"><span class="font-semibold mb-8">Пока "клиент горячий"
+                                быстро <br>отправляйте</span> подобранные объекты</div>
+                        <div class="text-center md:text-left">Не позволяйте себе терять клиентов</div>
+                    </div>
+                </div>
+
+                <div class="-mx-[10px] xl:mx-0 block md:hidden">
+                    <div class="absolute bottom-0">
+                        <svg width="320" height="608" viewBox="0 0 320 608" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g style="mix-blend-mode:overlay" filter="url(#filter0_f_26_576)">
+                                <circle cx="165.5" cy="440.5" r="190.5" fill="white" fill-opacity="0.6" />
+                            </g>
+                            <defs>
+                                <filter id="filter0_f_26_576" x="-275" y="0" width="881" height="881"
+                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                    <feGaussianBlur stdDeviation="125" result="effect1_foregroundBlur_26_576" />
+                                </filter>
+                            </defs>
+                        </svg>
+                    </div>
+                    <img class="w-full relative mt-6" src="{% static 'img/chart-1@sm.png' %}" alt="График">
+                </div>
+
+                <div class="absolute right-0 top-0 hidden xl:block">
+                    <img class="w-[1057px]" src="{% static 'img/chart-1@lg.png' %}" alt="График">
+                </div>
+                <img class="w-[510px] hidden md:block xl:hidden absolute top-0 right-0" src="{% static 'img/chart-1@md.png' %}"
+                    alt="График" loading="lazy">
+            </div>
+        </section>
+
+        <!--Почему выбирают клиенты-->
+        <section class="py-8 xl:pt-[90px] xl:pb-[154px]">
+            <div class="container">
+                <div class="mb-8 xl:mb-16">
+                    <h2 class="section-title">Почему выбирают клиенты</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-[10px] md:gap-4 xl:gap-x-[88px] xl:gap-y-[76px]">
+                    <div class="card-a">
+                        <div class="card-a__svg" style="background-image:url({% static 'img/svg/check-1.svg' %});"></div>
+                        <div class="card-a__content text-sm">
+                            <span class="font-semibold">Сохранение качества и размера <br
+                                    class="hidden xl:inline">фотографий оригинала</span> за счет <br
+                                class="hidden xl:inline">использование
+                            искуственного интеллекта
+                        </div>
+                    </div>
+
+                    <div class="card-a">
+                        <div class="card-a__svg" style="background-image:url({% static 'img/svg/check-1.svg' %});"></div>
+                        <div class="card-a__content text-sm">
+                            <span class="font-semibold">Экономит время и позволяет <br
+                                    class="hidden xl:inline">зарабатывать деньги</span>, работая <br
+                                class="hidden xl:inline">с клиентами, а не
+                            заниматься рутиной
+                        </div>
+                    </div>
+
+                    <div class="card-a">
+                        <div class="card-a__svg" style="background-image:url({% static 'img/svg/check-1.svg' %});"></div>
+                        <div class="card-a__content text-sm">
+                            <span class="font-semibold">Автоматическое обработка всех <br
+                                    class="hidden xl:inline">фотографий</span> без необходимости вручную <br
+                                class="hidden xl:inline">выделять нужную
+                            область
+                        </div>
+                    </div>
+
+                    <div class="card-a">
+                        <div class="card-a__svg" style="background-image:url({% static 'img/svg/check-1.svg' %});"></div>
+                        <div class="card-a__content text-sm">
+                            <span class="font-semibold">Старт работы за 2 минуты</span> <br class="hidden xl:inline">Не
+                            нужно скачивать программу <br class="hidden xl:inline">и ждать модерации аккаунта
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Частые вопросы от клиентов-->
+        <section class="bg-blue-50 py-9 xl:pt-[70px] xl:pb-[92px]">
+            <div class="container">
+                <div class="mb-6 xl:mb-16">
+                    <h2 class="section-title">Частые вопросы <br class="inline xl:hidden">от клиентов</h2>
+                </div>
+
+                <div class="space-y-4 mb-8 xl:mb-[90px]">
+                    <div x-data="{ show: false }">
+                        <div class="flex items-center justify-between w-full bg-blue-500 text-white rounded-[10px] py-6 pl-10 pr-8 cursor-pointer"
+                            @click="show = !show">
+                            <div class="xl:text-xl font-semibold">Сколько стоит?</div>
+                            <div>
+                                <svg width="42" height="42" class="transform transition"
+                                    :class="show ? '-rotate-90' : ''" viewBox="0 0 42 42" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="21" cy="21" r="20.5" stroke="white" :fill="show ? '' : '#1A8CD0'" />
+                                    <path d="M27.5 18.5L21 24.5L14.5 18.5" stroke="white" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="p-6 xl:py-10 xl:px-10" x-show="show">
+                            Очистка одного объявления стоит всего от 34 тенге! <br>
+                            Более подробно вы всегда можете посмотреть актуальные цены на пакеты отчисток в разделе стоимость или при пополнении личного кабинета.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4 mb-8 xl:mb-[90px]">
+                    <div x-data="{ show: false }">
+                        <div class="flex items-center justify-between w-full bg-blue-500 text-white rounded-[10px] py-6 pl-10 pr-8 cursor-pointer"
+                            @click="show = !show">
+                            <div class="xl:text-xl font-semibold">Как я могу решить проблему связанную с работой сервиса?</div>
+                            <div>
+                                <svg width="42" height="42" class="transform transition"
+                                    :class="show ? '-rotate-90' : ''" viewBox="0 0 42 42" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="21" cy="21" r="20.5" stroke="white" :fill="show ? '' : '#1A8CD0'" />
+                                    <path d="M27.5 18.5L21 24.5L14.5 18.5" stroke="white" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="p-6 xl:py-10 xl:px-10" x-show="show">
+                            Пользователям сервиса оказывается поддержка 24/7. Напишите нам в любой из мессенджеров или на почту.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row md:items-center">
+                    <div class="mb-6 md:mb-0 md:mr-14">
+                        <div class="font-semibold md:text-2xl mb-2 text-center md:text-left">Остались вопросы?</div>
+                        <div class="text-center md:text-left">Напишите нам</div>
+                    </div>
+
+                    <div class="flex items-center gap-x-[50px] mx-auto xl:mx-0 mb-6 md:mb-0">
+                        <div>
+                            <svg width="39" height="39" viewBox="0 0 39 39" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="39" height="39" rx="19.5" fill="#0874B4" />
+                                <path
+                                    d="M25.5299 13.1675L10.9412 19.1786C10.3542 19.4585 10.1555 20.0191 10.7993 20.3234L14.542 21.5942L23.5911 15.6185C24.0852 15.2434 24.5911 15.3434 24.1558 15.7561L16.3837 23.2752L16.1396 26.4572C16.3657 26.9487 16.7798 26.9509 17.0439 26.7067L19.1941 24.5327L22.8768 27.4792C23.7321 28.0204 24.1975 27.6711 24.3815 26.6795L26.7971 14.4583C27.0478 13.2376 26.6201 12.6997 25.5299 13.1675Z"
+                                    fill="white" />
+                            </svg>
+                        </div>
+
+                        <div class="flex gap-5">
+                            <svg width="37" height="27" viewBox="0 0 37 27" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M37 22.4999C37 23.2891 36.7718 24.0207 36.4063 24.6644L24.7239 11.9467L36.2797 2.10972C36.7292 2.80381 37 3.61914 37 4.5002V22.4999ZM18.5 14.2559L34.5795 0.566995C33.9197 0.215535 33.1766 0 32.3751 0H4.62497C3.82246 0 3.0792 0.215535 2.42203 0.566995L18.5 14.2559ZM22.9829 13.4277L19.2609 16.5984C19.0432 16.7829 18.7721 16.875 18.5 16.875C18.2278 16.875 17.9567 16.7829 17.739 16.5984L14.0162 13.4276L2.18602 26.3078C2.89512 26.7407 3.72615 27 4.6249 27H32.3751C33.2737 27 34.1051 26.7407 34.814 26.3078L22.9829 13.4277ZM0.720462 2.10965C0.271012 2.80374 0 3.61906 0 4.5002V22.5C0 23.2892 0.227089 24.0208 0.593954 24.6645L12.275 11.9446L0.720462 2.10965Z"
+                                    fill="#0874B4" />
+                            </svg>
+                            <a class="text-xl font-medium hidden md:inline" href="">forrealtor.kz@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="block md:hidden text-center">
+                        <a class="text-xl font-medium" href="">forrealtor.kz@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="pt-6 pb-10 xl:py-[56px]" x-data>
+        <div class="container">
+            <div class="flex flex-col md:flex-row xl:items-center md:justify-between mb-9 md:mb-12 xl:mb-20">
+                <div class="hidden md:block">
+                    <div class="mb-2">
+                        <a href="">
+                            <img src="{% static 'img/logo.svg' %}" alt="Логотип" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="text-xs">Сервис удаления водяных знаков с объявлений</div>
+                </div>
+
+                <div class="hidden xl:block mb-9 md:mb-0">
+                    <nav class="flex flex-col xl:flex-row gap-3 md:gap-10 text-sm md:text-base">
+                        <a href="#how-works">Как работает</a>
+                        <a href="{% url 'price'%}">Стоимость</a>
+                        <a href="{% url 'tg_info'%}">Telegram Bot</a>
+                        <a href="{% url 'api_info'%}">API</a>
+                    </nav>
+                </div>
+
+                <div class="flex items-center gap-20">
+                    <div>
+                        <a class="btn-a" href="#" @click.prevent="$dispatch('open-modal-upload')">Удалить знаки</a>
+                    </div>
+
+                    <div class="hidden xl:block relative" x-data="{ show: false }">
+                        <div class="flex items-center gap-2">
+                            <div class="uppercase">ru</div>
+                            <button @click.prevent="show = !show">
+                                <svg width="35" height="36" viewBox="0 0 35 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.583008" y="1.21289" width="33.5741" height="33.5741" rx="2.75"
+                                        fill="white" stroke="#6EBEEE" stroke-width="0.5" />
+                                    <path d="M12.1846 17.2593L17.3698 21.7037L22.5549 17.2593" stroke="black"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="absolute z-10 top-0 translate-y-full left-1/2 transform -translate-x-1/2 bg-white border border-blue-410 rounded overflow-hidden divide-y divide-blue-410 w-[112px]"
+                            x-show="show" @click.outside="show = false" style="display: none">
+                            <a class="block py-1 px-3 text-[10px] hover:bg-blue-50" href=""
+                                @click.prevent="show = false">KZ</a>
+                            <a class="block py-1 px-3 text-[10px] hover:bg-blue-50" href=""
+                                @click.prevent="show = false">Русский</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden md:block xl:hidden mb-[50px]">
+                <nav class="flex gap-x-9">
+                    <a href="#how-works">Как работает</a>
+                    <a href="{% url 'price'%}">Стоимость</a>
+                    <a href="{% url 'tg_info'%}">Telegram Bot</a>
+                    <a href="{% url 'api_info'%}">API</a>
+                </nav>
+            </div>
+
+            <div class="flex flex-col md:flex-row flex-wrap xl:flex-nowrap gap-6 md:gap-10 justify-between">
+                <div
+                    class="flex flex-col md:flex-row md:w-full xl:w-auto gap-2 md:gap-8 text-[10px] md:text-xs text-gray-500 md:text-black flex-shrink-0 order-3 md:order-1">
+                    <a href="{% static 'terms_of_use.pdf' %}" target="_blank">Пользовательское соглашение</a>
+                    {% comment %} <a href="">Политика конфиденциальности</a> {% endcomment %}
+                    <div>© znak.app 2023</div>
+                </div>
+
+                {% comment %} <div class="text-gray-500 text-[10px] order-2 md:w-2/3 xl:w-[410px]">
+                    Товарищество с ограниченной ответственностью "FORREALTOR (ФОРРИЭЛТОР)"
+                    Местонахождение: Казахстан, город Алматы, Медеуский район, Проспект Достык, здание 43, почтовый
+                    индекс 050010
+                </div> {% endcomment %}
+
+                <div class="flex items-center gap-8 flex-shrink-0 order-1 md:order-3">
+                    <div class="text-xs">
+                        Не работает сервис? <br>Напишите
+                    </div>
+
+                    <div>
+                        <a href="">
+                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="26" height="26" rx="13" fill="#0874B4" />
+                                <path
+                                    d="M17.0198 8.77767L7.29405 12.7851C6.90267 12.9717 6.77024 13.3454 7.19941 13.5483L9.69454 14.3955L15.7273 10.4117C16.0567 10.1616 16.3939 10.2283 16.1038 10.5034L10.9224 15.5161L10.7596 17.6375C10.9104 17.9651 11.1864 17.9666 11.3625 17.8038L12.796 16.3545L15.2511 18.3188C15.8213 18.6796 16.1316 18.4468 16.2542 17.7857L17.8646 9.6382C18.0318 8.82441 17.7466 8.46585 17.0198 8.77767Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="block md:hidden w-[162px] order-4">
+                    <div class="mb-2">
+                        <a href="">
+                            <img src="{% static 'img/logo.svg' %}" alt="Логотип" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="text-[10px]">Сервис удаления водяных знаков с объявлений</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--Modals-->
+    <div>
+
+        <!--Upload-->
+        <div x-data="{ show: false }" @open-modal-upload.window="show = true">
+            <div class="fixed top-0 left-0 w-full h-full" x-show="show" x-transition style="display: none">
+                <div class="absolute top-0 left-0 w-full h-full bg-slate-950/75 backdrop-blur-sm" x-show="show"></div>
+                <div class="absolute top-10 left-1/2 transform -translate-x-1/2 w-full md:w-[720px]" x-show="show"
+                    @click.outside="show = false; modalClosed()">
+                    <div
+                        class="bg-white border border-black rounded-[10px] shadow-2xl pt-9 pb-2 md:pb-12 px-5 md:px-12 relative max-w-[720px]">
+                        <div class="absolute top-[10px] md:top-4 right-[10px] md:right-4">
+                            <button type="button" @click.prevent="show = false; modalClosed()">
+                                <svg width="41" height="41" viewBox="0 0 41 41" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.25" y="0.25" width="40.5" height="40.5" rx="2.75" fill="white"
+                                        stroke="#6EBEEE" stroke-width="0.5" />
+                                    <path d="M14 14L27 27" stroke="black" stroke-linecap="round" />
+                                    <path d="M27 14L14 27" stroke="black" stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="">
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                            <div class="text-xl md:text-2xl font-semibold text-center md:text-left mb-2 md:mb-12">
+                                Удалить знаки</div>
+
+                            <div class="text-center md:text-left px-2 md:px-0">
+                                <label for="link-b"
+                                    class="inline-block text-sm md:text-lg text-center md:text-left mb-5 md:mb-6">
+                                    Вставьте ссылку на&nbsp;объявление <br class="inline md:hidden">с&nbsp;доски
+                                    объявления
+                                </label>
+                                <div class="upload-a mb-5">
+                                    <input id="link-b" class="upload-a__input w-full md:w-[400px] md:-mr-4" type="text"
+                                        placeholder="Вставьте ссылку" name="link_input">
+                                    <div
+                                        class="text-xs text-gray-500 text-center xl:text-left inline-block md:hidden my-5 max-w-[240px] xl:max-w-none">
+                                        Внимание: даже если полоса загрузки дошла до&nbsp;100%, не&nbsp;покидайте
+                                        ресурс, <br class="hidden xl:inline">
+                                        а&nbsp;дождитесь выгрузки фото. Обычно это занимает не&nbsp;более 10&nbsp;секунд
+                                    </div>
+                                    <button type="submit" class="upload-a__button w-full md:w-auto"
+                                        onclick="loadingAnimation()">Скачать</button>
+                                </div>
+                                <div class="text-xs text-gray-500 text-center md:text-left hidden md:block">
+                                    Внимание: даже если полоса загрузки дошла до&nbsp;100%, не&nbsp;покидайте ресурс,
+                                    <br class="hidden md:inline">
+                                    а&nbsp;дождитесь выгрузки фото. Обычно это занимает не&nbsp;более 10&nbsp;секунд
+                                </div>
+                            </div>
+                            <!-- Загрузчик выполнения обработчки изображения -->
+                            <div id="" class="loaderAnimation w-[100%] flex-row justify-between items-center"
+                                style="display: none">
+                                <div
+                                    class="bg-red-400 w-[100%] h-[14px] md-5 mt-10 rounded-[10px] flex-row justify-between items-center overflow-hidden ">
+                                    <div class="bg-red-550 w-[40%] h-[100%]"></div>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--DownloadMessage-->
+        {% if photos %}
+        <div x-data="{ show: true }">
+            <div class="fixed top-0 left-0 w-full h-full" x-show="show" x-transition style="display: none">
+                <div class="absolute top-0 left-0 w-full h-full bg-slate-950/75 backdrop-blur-sm" x-show="show"></div>
+                <div class="absolute top-10 left-1/2 transform -translate-x-1/2 w-[90vw] md:w-[80vw] h-[90vh] "
+                    x-show="show" @click.outside="show = false; modalClosed()">
+                    <div
+                        class="bg-white border border-black rounded-[10px] shadow-2xl pt-9 pb-2 h-full overflow-auto md:pb-12 px-5 md:px-12 relative">
+                        <div class="absolute top-[10px] md:top-4 right-[10px] md:right-4">
+                            <button type="button" @click.prevent="show = false; modalClosed()">
+                                <svg width="41" height="41" viewBox="0 0 41 41" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.25" y="0.25" width="40.5" height="40.5" rx="2.75" fill="white"
+                                        stroke="#6EBEEE" stroke-width="0.5" />
+                                    <path d="M14 14L27 27" stroke="black" stroke-linecap="round" />
+                                    <path d="M27 14L14 27" stroke="black" stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div>
+                            <div class="flex flex-col">
+                                <div class="text-2xl text-gray-500 text-center mt-10 text-center block">
+                                    Пройдите <span
+                                        class="text-blue-500 cursor-pointer underline underline-offset-4 font-medium"
+                                        @click.prevent="show=false; modalClosed(); $dispatch('open-modal-register')">регистрацию</span>
+                                    и получите 3 бесплатные очистки
+                                </div>
+                            </div>
+                            <section class="bg-white pt-6 md:pt-14 pb-5 md:pb-14 overflow-hidden relative"> 
+                                <div class="container">
+                                    <div class="flex flex-row justify-between items-center rounded-[10px] bg-blue-410 p-3">
+                                        <span id="announcements-text" class="w-full text-xl text-gray-500 text-center text-center block md:text-lg">
+                                            {{ context }}
+                                        </span>
+                                        <span class="p-5 rounded-[10px] flex justify-center items-center bg-red-400 max-h-20 cursor-pointer" onclick="copyTextToClipboard()">
+                                            <svg class="inline " xmlns=" http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 256 256">
+                                                <path fill="currentColor" d="M216 28H88a12 12 0 0 0-12 12v36H40a12 12 0 0 0-12 12v128a12 12 0 0 0 12 12h128a12 12 0 0 0 12-12v-36h36a12 12 0 0 0 12-12V40a12 12 0 0 0-12-12Zm-60 176H52V100h104Zm48-48h-24V88a12 12 0 0 0-12-12h-68V52h104Z" />
+                                            </svg>
+                                        </span>
+                                        <div id="notification-copy"></div>
+                                    </div>
+                                    <div class="container-img w-full pt-5 pb-5 flex flex-row flex-wrap justify-center items-center gap-3 relative">
+                                        {% for photo in photos %}
+                                        <div class="bg-white p-3 flex-row flex justify-center items-center rounded-[10px] h-[200px] w-[200px] cursor-pointer transition-[all_300ms_easy-in-out] hover:scale-[99%]">
+                                            {% if forloop.counter <= 3 %}
+                                            <img class="block h-full w-full rounded-[10px] object-cover" src="{% static 'out/s' %}{{number}}/{{photo}}" alt="Готовые фото" loading="lazy" onclick="showModal('{{ photo }}')">
+                                            {% else %}
+                                            <img class="block h-full w-full rounded-[10px] object-cover blur-sm" src="{% static 'out/s' %}{{number}}/{{photo}}" alt="Готовые фото" loading="lazy">
+                                            {% endif %}
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </section>
+                            <div id="modal" class="fixed top-0 left-0 w-full h-full bg-black z-999 flex justify-center items-center hidden">
+                                <div id="modal-content" class="modal-content bg-slate-500 bg-opacity-95 rounded-lg transition-transform duration-300 transform scale-0">
+                                    <img id="modal-img" class="max-w-full max-h-full m-auto block rounded-lg " src="" alst="Увеличенное изображение">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <!--Register-->
+        <div x-data="{ show: false }" @open-modal-register.window="show = true"  x-init="if ('{{ reg_error_msg }}') { show = true }">
+            <div class="fixed top-0 left-0 w-full h-full " x-show="show" x-transition style="display: none">
+                <div class="absolute top-0 left-0 w-full h-full bg-slate-950/75 backdrop-blur-sm" x-show="show"></div>
+                <div class="absolute top-10 left-1/2 transform -translate-x-1/2 w-full md:w-[720px] md:h-[90vh]"
+                    x-show="show" @click.outside="show = false; modalClosed()">
+                    <div
+                        class="bg-white border border-blue-500 rounded-[10px] shadow-2xl pt-10 pb-6 md:pb-12 px-5 md:px-12 relative max-w-[554px] mx-auto h-[90vh] overflow-auto">
+                        <div class="absolute top-[10px] md:top-4 right-[10px] md:right-4">
+                            <button type="button" @click.prevent="show = false; modalClosed()">
+                                <svg width="41" height="41" viewBox="0 0 41 41" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.25" y="0.25" width="40.5" height="40.5" rx="2.75" fill="white"
+                                        stroke="#6EBEEE" stroke-width="0.5" />
+                                    <path d="M14 14L27 27" stroke="black" stroke-linecap="round" />
+                                    <path d="M27 14L14 27" stroke="black" stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="">
+                            <div class="mb-2 md:mb-6">
+                                <div class="text-xl md:text-2xl font-semibold text-center mb-2">Регистрация в сервисе
+                                </div>
+                                <div class="text-center text-sm md:text-base">
+                                    Сможете попробовать 3 бесплатные очистки фото <br class="hidden md:inline">
+                                    и выбрать тарифы для обработки большого количества объявлений
+                                </div>
+                            </div>
+
+                            <div class="text-sm md:text-base text-gray-500 text-center mb-2 md:mb-6">
+                                Для регистрации введите <br class="inline md:hidden">email и пароль
+                            </div>
+
+                            <form action="{% url 'homepage' %}" method="POST">
+                                {% csrf_token %}
+                                <div class="max-w-[300px] mx-auto mb-4">
+                                    <div class="space-y-3 mb-4">
+                                        <div>
+                                            <input class="control-a w-full" type="email" name="email" placeholder="Ваш e-mail*">
+                                        </div>
+                                        <div>
+                                            <input class="control-a w-full" id="reg-password-input1" type="password" name="password" placeholder="Ваш пароль*">
+                                        </div>
+                                        <div>
+                                            <input class="control-a w-full" id="reg-password-input2" type="password" name="password_repeat" placeholder="Повторите пароль*">
+                                        </div>
+                                        <label class="text-[15px] text-gray-500" style="display: inline-block; margin-left: 10px;" >
+                                            <input type="checkbox" class="password-checkbox-register" onchange="toggleRegisterPasswordVisibility()">Показать пароль</label>
+                                    </div>
+                                    {% if reg_error_msg %}
+                                        <div class="alert alert-info" role="alert">
+                                            {{ reg_error_msg }}
+                                        </div>
+                                    {% endif %}
+                                    <div class="max-w-[300px] mx-auto mb-6">
+                                        <button type="submit" class="btn-b w-full" name="form_type" value="form1">Зарегистрироваться</button>
+                                    </div>
+
+                                    <div class="flex gap-3 items-start w-9/12 mx-auto mb-6">
+                                        <input class="border-blue-500 rounded" id="acceptance" type="checkbox" checked required>
+                                        <label class="text-[10px] text-gray-500" for="acceptance">Нажимая на кнопку, вы
+                                            соглашаетесь с <a href="{% static 'terms_of_use.pdf' %}" target="_blank" >Пользовательским соглашением</a></label>
+                                    </div>
+                                </div>
+
+                                <div class="text-sm text-center">
+                                    Уже регистрировались? <a class="underline" href=""
+                                        @click.prevent="show=false; modalClosed(); $dispatch('open-modal-signin')">Войти</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Sign in-->
+        <div x-data="{ show: false }" @open-modal-signin.window="show = true" x-init="if ('{{ log_error_msg }}') { show = true }">
+            <div class="fixed top-0 left-0 w-full h-full " x-show="show" x-transition>
+                <div class="absolute top-0 left-0 w-full h-full bg-slate-950/75 backdrop-blur-sm" x-show="show"></div>
+                <div class="absolute top-10 left-1/2 transform -translate-x-1/2 w-full md:w-[720px] md:h-[90vh]"
+                    x-show="show" @click.outside="show = false">
+                    <div class="bg-white border border-blue-500 rounded-[10px] shadow-2xl pt-10 pb-6 md:pb-12 px-5 md:px-12 relative max-w-[554px] mx-auto h-[90vh] overflow-auto">
+                        <div class="absolute top-[10px] md:top-4 right-[10px] md:right-4">
+                            <button type="button" @click.prevent="show = false">
+                                <svg width="41" height="41" viewBox="0 0 41 41" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.25" y="0.25" width="40.5" height="40.5" rx="2.75" fill="white"
+                                        stroke="#6EBEEE" stroke-width="0.5" />
+                                    <path d="M14 14L27 27" stroke="black" stroke-linecap="round" />
+                                    <path d="M27 14L14 27" stroke="black" stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+        
+                        <div class="h-full flex flex-col justify-center items-center">
+                            <div class="mb-2 md:mb-6">
+                                <div class="text-xl md:text-2xl font-semibold text-center mb-2">Войти в сервис
+                                </div>
+                            </div>
+        
+                            <div class="text-sm md:text-base text-gray-500 text-center mb-2 md:mb-6">
+                                Для входа введите <br class="inline md:hidden">email и пароль
+                            </div>
+        
+                            <form action="{% url 'homepage' %}" method="POST">
+                                {% csrf_token %}
+                                <div class="max-w-[300px] mx-auto mb-4">
+                                    <div class="space-y-3 mb-4">
+                                        <div>
+                                            <input class="control-a w-full" type="email" name="email" placeholder="Ваш e-mail*">
+                                        </div>
+                                        <div>
+                                            <input class="control-a w-full" id="log-password-input" type="password" name="password" placeholder="Ваш пароль*">
+                                            <label class="text-[15px] text-gray-500" style="display: inline-block; margin-left: 10px;" ><input type="checkbox" class="password-checkbox-login" onchange="toggleLoginPasswordVisibility()">Показать пароль</label>
+                                        </div>
+                                    </div>
+        
+                                    {% if log_error_msg %}
+                                        <div class="alert alert-info" role="alert">
+                                            {{ log_error_msg }}
+                                        </div>
+                                    {% endif %}
+                                    
+                                    <div class="max-w-[300px] mx-auto mb-6">
+                                        <button type="submit" class="btn-b w-full" name="form_type" value="form2">Войти</button>
+                                    </div>
+                                    
+                                    <div class="flex gap-3 items-start w-9/12 mx-auto mb-6">
+                                        <input class="border-blue-500 rounded" id="acceptance" type="checkbox" checked required>
+                                        <label class="text-[10px] text-gray-500" for="acceptance">Нажимая на кнопку, вы
+                                            соглашаетесь с <a href="{% static 'terms_of_use.pdf' %}" target="_blank" >Пользовательским соглашением</a></label>
+                                    </div>
+                                </div>
+                                <div class="text-sm text-center">
+                                    Еще нет аккаунта? <a class="underline" href=""
+                                        @click.prevent="show=false; $dispatch('open-modal-register')">Регистрация</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- <span class="text-red-550 text-center text-2xl"></span> -->
+    <script>
+        const timeAnimate = 60; // сюда ставить время анимации можно секундах
+        function loadingAnimation() {
+            // здесь надо добавить проверку на выполнение функции
+            const loaderContainer = document.querySelectorAll('.loaderAnimation')
+            loaderContainer.forEach((elem) => {
+                elem.children[0].children[0].classList.add('loading-animate');
+                elem.children[0].children[0].style.animationDuration = `${timeAnimate}s`;
+                elem.style.display = 'flex';
+            })
+
+            setTimeout(() => {
+                loaderContainer.forEach((elem) => {
+                    elem.children[0].children[0].classList.remove('loading-animate');
+                    elem.children[0].children[0].style.animationDuration = '';
+                    elem.style.display = 'none';
+                })
+            }, timeAnimate * 1000 + 1000);
+        }
+        
+        menuButton.addEventListener('click', function() {
+            const menuButton = document.getElementById('menuButton');
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+        });
+
+        function toggleLoginPasswordVisibility() {
+            var passwordInput = document.getElementById('log-password-input');
+            var checkbox = document.querySelector('.password-checkbox-login');
+            
+            if (checkbox.checked) {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        }
+
+        function toggleRegisterPasswordVisibility() {
+            var passwordInput1 = document.getElementById('reg-password-input1'); // Получаем все поля ввода пароля
+            var passwordInput2 = document.getElementById('reg-password-input2');
+            var checkbox = document.querySelector('.password-checkbox-register');
+            
+            if (checkbox.checked) {
+                passwordInput1.type = 'text';
+                passwordInput2.type = 'text';
+            } else {
+                passwordInput1.type = 'password';
+                passwordInput2.type = 'password';
+            }
+        
+        }
+
+        
+        window.addEventListener('open-modal-register', () => {
+            console.log('Модальное окно открыто register');
+            document.querySelector('body').style.overflow = 'hidden';
+        })
+
+        window.addEventListener('open-modal-upload', () => {
+            console.log('Модальное окно открыто upload');
+            document.querySelector('body').style.overflow = 'hidden';
+        })
+
+        window.addEventListener('open-modal-signin', () => {
+            console.log('Модальное окно открыто signin');
+            document.querySelector('body').style.overflow = 'hidden';
+        })
+
+        function modalClosed() {
+            console.log('Модальное окно закрыто');
+            document.querySelector('body').style.overflow = '';
+        }
+
+        function copyTextToClipboard() {
+            const textToCopy = document.querySelector('#announcements-text').textContent;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                document.querySelector('#announcements-text').innerHTML = '<b w-full class="text-red-550 text-center text-2xl">Текст скопирован<b>';
+                setTimeout(() => {
+                    document.querySelector('#announcements-text').innerHTML = textToCopy;
+                }, 800);
+                // alert('Текст скопирован в буфер обмена: ' + textToCopy);
+            }, function (err) {
+                console.error('Async: Could not copy text: ', err);
+            });
+        }   
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script>
+        function showModal(photo) {
+            var modal = document.getElementById("modal");
+            var modalContent = document.getElementById("modal-content");
+            var modalImg = document.getElementById("modal-img");
+            
+            modalImg.src = "{% static 'out/s' %}{{ number }}/" + photo;
+            
+            modal.classList.remove('hidden');
+            modalContent.classList.remove('scale-0');
+            modalContent.classList.add('scale-100');
+        }
+    
+        function hideModal() {
+            var modal = document.getElementById("modal");
+            var modalContent = document.getElementById("modal-content");
+    
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-0');
+    
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+    
+        // Закрываем модальное окно при клике на оверлей
+        document.getElementById("modal").addEventListener("click", function(event) {
+            if (event.target === this) {
+                hideModal();
+            }
+        });
+    </script>
+    
+    <style>
+        /* CSS для анимации появления и исчезновения */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+    
+        @keyframes scaleOut {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(0);
+            }
+        }
+    
+        #modal {
+            animation: fadeIn 0.3s forwards;
+        }
+    
+        #modal-content {
+            animation: scaleIn 0.3s forwards;
+        }
+    
+        #modal.hidden {
+            animation: fadeIn 0.3s reverse forwards;
+        }
+    
+        #modal-content.scale-0 {
+            animation: scaleOut 0.3s forwards;
+        }
+    </style>
+</body>
+</html>

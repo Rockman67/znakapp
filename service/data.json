@@ -1,0 +1,125 @@
+{
+    "data": {
+      "wallet_balance": "178.02",
+      "wallet_available_balance": "167.34",
+      "account": [],
+      "wallet_transactions": [
+        {
+          "id": "98941d08-402a-431b-aa7e-8d48cec94102",
+          "uuid": "98941d08-402a-431b-aa7e-8d48cec94102",
+          "product_id": 335,
+          "product_title": "Steive Vai upcoming event 2023!",
+          "sign": true,
+          "currency_id": 2,
+          "currency_code": "USD",
+          "sale_form": {
+            "id": "98941d08-3803-4501-967e-09ca602046e6",
+            "customer_id": "jehkinen",
+            "email": "jehkinen@ya.ru",
+            "phone_number": "+79126568565",
+            "name": "andrey",
+            "additional_fields": []
+          },
+          "amount": 100,
+          "total_amount": 94.8,
+          "commission": 5.2,
+          "exchange_rate": 1,
+          "json_data": [],
+          "type": "sell",
+          "type_label": "Sell",
+          "status": "sell_completed",
+          "status_label": "Sell Completed",
+          "created_at": 1677619096,
+          "updated_at": 1677619103
+        },
+        {
+          "id": "98940350-7389-4c31-8320-133cfcb7dc5f",
+          "uuid": "98940350-7389-4c31-8320-133cfcb7dc5f",
+          "product_id": 335,
+          "product_title": "Steive Vai upcoming event 2023!",
+          "sign": true,
+          "currency_id": 2,
+          "currency_code": "USD",
+          "sale_form": {
+            "id": "98940350-6a86-448d-bf58-b1963df6ecbe",
+            "customer_id": "jehkinen",
+            "email": "jehkinen@ya.ru",
+            "phone_number": "+79054545454",
+            "name": "test123",
+            "additional_fields": []
+          },
+          "amount": 100,
+          "total_amount": 94.8,
+          "commission": 5.2,
+          "exchange_rate": 1,
+          "json_data": [],
+          "type": "sell",
+          "type_label": "Sell",
+          "status": "sell_completed",
+          "status_label": "Sell Completed",
+          "created_at": 1677614781,
+          "updated_at": 1677614788
+        },
+        {
+          "id": "1",
+          "uuid": "1",
+          "product_id": 335,
+          "product_title": "Steive Vai upcoming event 2023!",
+          "sign": true,
+          "currency_id": 2,
+          "currency_code": "USD",
+          "sale_form": {
+            "id": "989400c1-3c8e-4f84-aa30-cd21c3669b02",
+            "customer_id": "jehkinen",
+            "email": "jehkinen@ya.ru",
+            "phone_number": "+79056565454",
+            "name": "Test",
+            "additional_fields": []
+          },
+          "amount": 100,
+          "total_amount": 94.8,
+          "commission": 5.2,
+          "exchange_rate": 1,
+          "json_data": [],
+          "type": "sell",
+          "type_label": "Sell",
+          "status": "sell_completed",
+          "status_label": "Sell Completed",
+          "created_at": 1676990035,
+          "updated_at": 1677614359
+        }
+      ]
+    },
+    "links": {
+      "first": "https://api-stag.mel.store/api/mel-store/wallet/transactions?page=1",
+      "last": "https://api-stag.mel.store/api/mel-store/wallet/transactions?page=1",
+      "prev": null,
+      "next": null
+    },
+    "meta": {
+      "current_page": 1,
+      "from": 1,
+      "last_page": 1,
+      "links": [
+        {
+          "url": null,
+          "label": "&laquo; Previous",
+          "active": false
+        },
+        {
+          "url": "https://api-stag.mel.store/api/mel-store/wallet/transactions?page=1",
+          "label": "1",
+          "active": true
+        },
+        {
+          "url": null,
+          "label": "Next &raquo;",
+          "active": false
+        }
+      ],
+      "path": "https://api-stag.mel.store/api/mel-store/wallet/transactions",
+      "per_page": 20,
+      "to": 3,
+      "total": 3
+    }
+  }

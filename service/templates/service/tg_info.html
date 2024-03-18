@@ -1,0 +1,437 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>znak.app</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="{% static 'style/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+
+    <style>
+        .alert-info {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 20px;
+            border-radius: 5px;
+            font-size: 20px;
+            text-align:center;
+            margin:40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="bg-white py-3 md:pt-4 md:pb-6 xl:py-5" x-data>
+        <div class="container">
+            <div class="flex items-center justify-between">
+                <div class="w-[160px] md:w-auto">
+                    <div class="mb-2">
+                        <a href="{% url 'homepage' %}">
+                            <img class="w-[160px] md:w-[224px]" src="{% static 'img/logo.svg' %}" alt="Логотип" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="text-[10px] md:text-xs leading-tight">Сервис удаления водяных знаков с объявлений</div>
+                </div>
+
+                <div class="hidden xl:block">
+                    <nav class="flex flex-col md:flex-row gap-10">
+                        <a href="{% url 'homepage' %}#how-works">Как работает</a>
+                        <a href="{% url 'price'%}">Стоимость</a>
+                        <a href="{% url 'tg_info'%}">Telegram Bot</a>
+                        <a href="{% url 'api_info'%}">API</a>
+                    </nav>
+                </div>
+
+                <div class="hidden md:flex items-center gap-10 xl:gap-20">
+                    <div>
+                        <a class="btn-a" href="#" @click.prevent="$dispatch('open-modal-upload')">Удалить знаки</a>
+                    </div>
+
+                    <div class="hidden xl:block relative" x-data="{ show: false }">
+                        <div class="flex items-center gap-2">
+                            <div class="uppercase">ru</div>
+                            <button @click.prevent="show = !show">
+                                <svg width="35" height="36" viewBox="0 0 35 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.583008" y="1.21289" width="33.5741" height="33.5741" rx="2.75"
+                                        fill="white" stroke="#6EBEEE" stroke-width="0.5" />
+                                    <path d="M12.1846 17.2593L17.3698 21.7037L22.5549 17.2593" stroke="black"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="absolute z-10 top-0 translate-y-full left-1/2 transform -translate-x-1/2 bg-white border border-blue-410 rounded overflow-hidden divide-y divide-blue-410 w-[112px]"
+                            x-show="show" @click.outside="show = false" style="display: none">
+                            <a class="block py-1 px-3 text-[10px] hover:bg-blue-50" href=""
+                                @click.prevent="show = false">KZ</a>
+                            <a class="block py-1 px-3 text-[10px] hover:bg-blue-50" href=""
+                                @click.prevent="show = false">Русский</a>
+                        </div>
+                    </div>
+
+                    <div>
+                        {% if user_mail %}
+                            <a href="{% url 'cabinet' user_id=user_mail %}" class="hidden md:inline underline">Личный кабинет</a>
+                        {% else %}
+                            <a class="underline" href="" @click.prevent="$dispatch('open-modal-register')">Регистрация</a>
+                            <span class="text-blue-500">/</span>
+                            <a class="underline" href="" @click.prevent="$dispatch('open-modal-signin')">Войти</a>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="flex items-center md:hidden">
+                    <div style="margin-right:10px;">
+                        <div class="uppercase">ru</div>
+                    </div>
+                    <button id="menuButton">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="50" height="50" rx="10" fill="#EDF3F7" />
+                            <rect x="10" y="19" width="29" height="3" rx="1.5" fill="#0874B4" />
+                            <rect x="10" y="24" width="29" height="3" rx="1.5" fill="#0874B4" />
+                            <rect x="10" y="29" width="29" height="3" rx="1.5" fill="#0874B4" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hidden md:flex xl:hidden justify-between items-center mt-8">
+                <nav class="flex items-center gap-5">
+                    <a href="{% url 'homepage' %}#how-works">Как работает</a>
+                    <a href="{% url 'price'%}">Стоимость</a>
+                    <a href="{% url 'tg_info'%}">Telegram Bot</a>
+                    <a href="{% url 'api_info'%}">API</a>
+                </nav>
+            </div>
+
+            <div class="hidden md:flex md:hidden justify-between items-center mt-8" id="menu">
+                <nav class="flex items-center gap-5" style="flex-direction: column;">
+                    <a href="{% url 'homepage' %}#how-works">Как работает</a>
+                    <a href="{% url 'price'%}">Стоимость</a>
+                    <a href="{% url 'tg_info'%}">Telegram Bot</a>
+                    <a href="{% url 'api_info'%}">API</a>
+                    {% if user_mail %}
+                        <a href="{% url 'cabinet' user_id=user_mail %}">Личный кабинет</a>
+                    {% else %}
+                        <a class="" href="" @click.prevent="$dispatch('open-modal-register')">Регистрация</a>
+                        <a class="" href="" @click.prevent="$dispatch('open-modal-signin')">Войти</a>
+                    {% endif %}
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div>
+        <section class="bg-blue-50 pt-8 md:h-[80vh] md:pt-[52px] pb-6 md:pb-[78px] overflow-hidden">
+            <div class="container relative">
+                <div class="">
+                    {% if info_msg %}
+                        <div class="alert alert-info" role="alert">
+                            {{ info_msg }}
+                        </div>
+                    {% endif %}
+                </div>
+                <a href="#"  class="btn-b" style="margin: auto; display: block; max-width: 300px; min-width:280px; text-align: center">Подробнее</a>
+            </div>
+        <section>
+    </div>
+    <footer class="pt-6 pb-10 xl:py-[56px]" x-data>
+        <div class="container">
+            <div class="flex flex-col md:flex-row xl:items-center md:justify-between mb-9 md:mb-12 xl:mb-20">
+                <div class="hidden md:block">
+                    <div class="mb-2">
+                        <a href="">
+                            <img src="{% static 'img/logo.svg' %}" alt="Логотип" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="text-xs">Сервис удаления водяных знаков с объявлений</div>
+                </div>
+
+                <div class="hidden xl:block mb-9 md:mb-0">
+                    <nav class="flex flex-col xl:flex-row gap-3 md:gap-10 text-sm md:text-base">
+                        <a href="#how-works">Как работает</a>
+                        <a href="{% url 'price'%}">Стоимость</a>
+                        <a href="{% url 'tg_info'%}">Telegram Bot</a>
+                        <a href="{% url 'api_info'%}">API</a>
+                    </nav>
+                </div>
+
+                <div class="flex items-center gap-20">
+                    <div>
+                        <a class="btn-a" href="#" @click.prevent="$dispatch('open-modal-upload')">Удалить знаки</a>
+                    </div>
+
+                    <div class="hidden xl:block relative" x-data="{ show: false }">
+                        <div class="flex items-center gap-2">
+                            <div class="uppercase">ru</div>
+                            <button @click.prevent="show = !show">
+                                <svg width="35" height="36" viewBox="0 0 35 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.583008" y="1.21289" width="33.5741" height="33.5741" rx="2.75"
+                                        fill="white" stroke="#6EBEEE" stroke-width="0.5" />
+                                    <path d="M12.1846 17.2593L17.3698 21.7037L22.5549 17.2593" stroke="black"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="absolute z-10 top-0 translate-y-full left-1/2 transform -translate-x-1/2 bg-white border border-blue-410 rounded overflow-hidden divide-y divide-blue-410 w-[112px]"
+                            x-show="show" @click.outside="show = false" style="display: none">
+                            <a class="block py-1 px-3 text-[10px] hover:bg-blue-50" href=""
+                                @click.prevent="show = false">KZ</a>
+                            <a class="block py-1 px-3 text-[10px] hover:bg-blue-50" href=""
+                                @click.prevent="show = false">Русский</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden md:block xl:hidden mb-[50px]">
+                <nav class="flex gap-x-9">
+                    <a href="#how-works">Как работает</a>
+                    <a href="{% url 'price'%}">Стоимость</a>
+                    <a href="{% url 'tg_info'%}">Telegram Bot</a>
+                    <a href="{% url 'api_info'%}">API</a>
+                </nav>
+            </div>
+
+            <div class="flex flex-col md:flex-row flex-wrap xl:flex-nowrap gap-6 md:gap-10 justify-between">
+                <div
+                    class="flex flex-col md:flex-row md:w-full xl:w-auto gap-2 md:gap-8 text-[10px] md:text-xs text-gray-500 md:text-black flex-shrink-0 order-3 md:order-1">
+                    <a href="{% static 'terms_of_use.pdf' %}" target="_blank">Пользовательское соглашение</a>
+                    {% comment %} <a href="">Политика конфиденциальности</a> {% endcomment %}
+                    <div>© znak.app 2023</div>
+                </div>
+
+                {% comment %} <div class="text-gray-500 text-[10px] order-2 md:w-2/3 xl:w-[410px]">
+                    Товарищество с ограниченной ответственностью "FORREALTOR (ФОРРИЭЛТОР)"
+                    Местонахождение: Казахстан, город Алматы, Медеуский район, Проспект Достык, здание 43, почтовый
+                    индекс 050010
+                </div> {% endcomment %}
+
+                <div class="flex items-center gap-8 flex-shrink-0 order-1 md:order-3">
+                    <div class="text-xs">
+                        Не работает сервис? <br>Напишите
+                    </div>
+
+                    <div>
+                        <a href="">
+                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="26" height="26" rx="13" fill="#0874B4" />
+                                <path
+                                    d="M17.0198 8.77767L7.29405 12.7851C6.90267 12.9717 6.77024 13.3454 7.19941 13.5483L9.69454 14.3955L15.7273 10.4117C16.0567 10.1616 16.3939 10.2283 16.1038 10.5034L10.9224 15.5161L10.7596 17.6375C10.9104 17.9651 11.1864 17.9666 11.3625 17.8038L12.796 16.3545L15.2511 18.3188C15.8213 18.6796 16.1316 18.4468 16.2542 17.7857L17.8646 9.6382C18.0318 8.82441 17.7466 8.46585 17.0198 8.77767Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="block md:hidden w-[162px] order-4">
+                    <div class="mb-2">
+                        <a href="">
+                            <img src="{% static 'img/logo.svg' %}" alt="Логотип" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="text-[10px]">Сервис удаления водяных знаков с объявлений</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+        
+    <!--Modals-->
+    <div>
+            <!--Register-->
+            <div x-data="{ show: false }" @open-modal-register.window="show = true"  x-init="if ('{{ reg_error_msg }}') { show = true }">
+                <div class="fixed top-0 left-0 w-full h-full " x-show="show" x-transition style="display: none">
+                    <div class="absolute top-0 left-0 w-full h-full bg-slate-950/75 backdrop-blur-sm" x-show="show"></div>
+                    <div class="absolute top-10 left-1/2 transform -translate-x-1/2 w-full md:w-[720px] md:h-[90vh]"
+                        x-show="show" @click.outside="show = false; modalClosed()">
+                        <div
+                            class="bg-white border border-blue-500 rounded-[10px] shadow-2xl pt-10 pb-6 md:pb-12 px-5 md:px-12 relative max-w-[554px] mx-auto h-[90vh] overflow-auto">
+                            <div class="absolute top-[10px] md:top-4 right-[10px] md:right-4">
+                                <button type="button" @click.prevent="show = false; modalClosed()">
+                                    <svg width="41" height="41" viewBox="0 0 41 41" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="0.25" y="0.25" width="40.5" height="40.5" rx="2.75" fill="white"
+                                            stroke="#6EBEEE" stroke-width="0.5" />
+                                        <path d="M14 14L27 27" stroke="black" stroke-linecap="round" />
+                                        <path d="M27 14L14 27" stroke="black" stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+    
+                            <div class="">
+                                <div class="mb-2 md:mb-6">
+                                    <div class="text-xl md:text-2xl font-semibold text-center mb-2">Регистрация в сервисе
+                                    </div>
+                                    <div class="text-center text-sm md:text-base">
+                                        Сможете попробовать 3 бесплатные очистки фото <br class="hidden md:inline">
+                                        и выбрать тарифы для обработки большого количества объявлений
+                                    </div>
+                                </div>
+    
+                                <div class="text-sm md:text-base text-gray-500 text-center mb-2 md:mb-6">
+                                    Для регистрации введите <br class="inline md:hidden">email и пароль
+                                </div>
+    
+                                <form action="{% url 'homepage' %}" method="POST">
+                                    {% csrf_token %}
+                                    <div class="max-w-[300px] mx-auto mb-4">
+                                        <div class="space-y-3 mb-4">
+                                            <div>
+                                                <input class="control-a w-full" type="email" name="email" placeholder="Ваш e-mail*">
+                                            </div>
+                                            <div>
+                                                <input class="control-a w-full" id="reg-password-input1" type="password" name="password" placeholder="Ваш пароль*">
+                                            </div>
+                                            <div>
+                                                <input class="control-a w-full" id="reg-password-input2" type="password" name="password_repeat" placeholder="Повторите пароль*">
+                                            </div>
+                                            <label class="text-[15px] text-gray-500" style="display: inline-block; margin-left: 10px;" >
+                                                <input type="checkbox" class="password-checkbox-register" onchange="toggleRegisterPasswordVisibility()">Показать пароль</label>
+                                        </div>
+                                        {% if reg_error_msg %}
+                                            <div class="alert alert-info" role="alert">
+                                                {{ reg_error_msg }}
+                                            </div>
+                                        {% endif %}
+                                        <div class="max-w-[300px] mx-auto mb-6">
+                                            <button type="submit" class="btn-b w-full" name="form_type" value="form1">Зарегистрироваться</button>
+                                        </div>
+    
+                                        <div class="flex gap-3 items-start w-9/12 mx-auto mb-6">
+                                            <input class="border-blue-500 rounded" id="acceptance" type="checkbox" checked required>
+                                            <label class="text-[10px] text-gray-500" for="acceptance">Нажимая на кнопку, вы
+                                                соглашаетесь с <a href="{% static 'terms_of_use.pdf' %}" target="_blank" >Пользовательским соглашением</a></label>
+                                        </div>
+                                    </div>
+    
+                                    <div class="text-sm text-center">
+                                        Уже регистрировались? <a class="underline" href=""
+                                            @click.prevent="show=false; modalClosed(); $dispatch('open-modal-signin')">Войти</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!--Sign in-->
+            <div x-data="{ show: false }" @open-modal-signin.window="show = true" x-init="if ('{{ log_error_msg }}') { show = true }">
+                <div class="fixed top-0 left-0 w-full h-full " x-show="show" x-transition>
+                    <div class="absolute top-0 left-0 w-full h-full bg-slate-950/75 backdrop-blur-sm" x-show="show"></div>
+                    <div class="absolute top-10 left-1/2 transform -translate-x-1/2 w-full md:w-[720px] md:h-[90vh]"
+                        x-show="show" @click.outside="show = false">
+                        <div class="bg-white border border-blue-500 rounded-[10px] shadow-2xl pt-10 pb-6 md:pb-12 px-5 md:px-12 relative max-w-[554px] mx-auto h-[90vh] overflow-auto">
+                            <div class="absolute top-[10px] md:top-4 right-[10px] md:right-4">
+                                <button type="button" @click.prevent="show = false">
+                                    <svg width="41" height="41" viewBox="0 0 41 41" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="0.25" y="0.25" width="40.5" height="40.5" rx="2.75" fill="white"
+                                            stroke="#6EBEEE" stroke-width="0.5" />
+                                        <path d="M14 14L27 27" stroke="black" stroke-linecap="round" />
+                                        <path d="M27 14L14 27" stroke="black" stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+            
+                            <div class="h-full flex flex-col justify-center items-center">
+                                <div class="mb-2 md:mb-6">
+                                    <div class="text-xl md:text-2xl font-semibold text-center mb-2">Войти в сервис
+                                    </div>
+                                </div>
+            
+                                <div class="text-sm md:text-base text-gray-500 text-center mb-2 md:mb-6">
+                                    Для входа введите <br class="inline md:hidden">email и пароль
+                                </div>
+            
+                                <form action="{% url 'homepage' %}" method="POST">
+                                    {% csrf_token %}
+                                    <div class="max-w-[300px] mx-auto mb-4">
+                                        <div class="space-y-3 mb-4">
+                                            <div>
+                                                <input class="control-a w-full" type="email" name="email" placeholder="Ваш e-mail*">
+                                            </div>
+                                            <div>
+                                                <input class="control-a w-full" id="log-password-input" type="password" name="password" placeholder="Ваш пароль*">
+                                            <label class="text-[15px] text-gray-500" style="display: inline-block; margin-left: 10px;" ><input type="checkbox" class="password-checkbox-login" onchange="toggleLoginPasswordVisibility()">Показать пароль</label>
+                                            </div>
+                                        </div>
+                                        {% if log_error_msg %}
+                                            <div class="alert alert-info" role="alert">
+                                                {{ log_error_msg }}
+                                            </div>
+                                        {% endif %}
+                                        
+                                        <div class="max-w-[300px] mx-auto mb-6">
+                                            <button type="submit" class="btn-b w-full" name="form_type" value="form2">Войти</button>
+                                        </div>
+                                        
+                                        <div class="flex gap-3 items-start w-9/12 mx-auto mb-6">
+                                            <input class="border-blue-500 rounded" id="acceptance" type="checkbox" checked required>
+                                            <label class="text-[10px] text-gray-500" for="acceptance">Нажимая на кнопку, вы
+                                                соглашаетесь с <a href="{% static 'terms_of_use.pdf' %}" target="_blank" >Пользовательским соглашением</a></label>
+                                        </div>
+                                    </div>
+                                    <div class="text-sm text-center">
+                                        Еще нет аккаунта? <a class="underline" href=""
+                                            @click.prevent="show=false; $dispatch('open-modal-register')">Регистрация</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script>
+        function toggleLoginPasswordVisibility() {
+            var passwordInput = document.getElementById('log-password-input');
+            var checkbox = document.querySelector('.password-checkbox-login');
+            
+            if (checkbox.checked) {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        }
+
+        menuButton.addEventListener('click', function() {
+            const menuButton = document.getElementById('menuButton');
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        function toggleRegisterPasswordVisibility() {
+            var passwordInput1 = document.getElementById('reg-password-input1'); // Получаем все поля ввода пароля
+            var passwordInput2 = document.getElementById('reg-password-input2');
+            var checkbox = document.querySelector('.password-checkbox-register');
+            
+            if (checkbox.checked) {
+                passwordInput1.type = 'text';
+                passwordInput2.type = 'text';
+            } else {
+                passwordInput1.type = 'password';
+                passwordInput2.type = 'password';
+            }
+        
+        }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+
+</html>

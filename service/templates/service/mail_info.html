@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>znak.app</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="{% static 'style/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+
+    <style>
+        .alert-info {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 20px;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-white py-3 md:pt-4 md:pb-6 xl:py-5" x-data>
+        <div class="container">
+            <div class="flex items-center justify-between">
+                <div class="w-[160px] md:w-auto">
+                    <div class="mb-2">
+                        <a href="">
+                            <img class="w-[160px] md:w-[224px]" src="{% static 'img/logo.svg' %}" alt="Логотип" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="text-[10px] md:text-xs leading-tight">Сервис удаления водяных знаков с объявлений</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div>
+        <section class="bg-blue-50 pt-8 md:h-[80vh] md:pt-[52px] pb-6 md:pb-[78px] overflow-hidden">
+            <div class="container relative">
+                <div class="">
+                    {% if info_msg %}
+                        <div class="alert alert-info" role="alert">
+                            {{ info_msg }}
+                        </div>
+                    {% endif %}
+                </div>
+                <a href="{% url 'homepage' %}"  class="btn-b" style="margin: auto; margin-top: 20px; display: block; max-width: 300px; min-width:280px; text-align: center">Домашняя страница</a>
+            </div>
+        <section>
+    </div>
+    <footer class="pt-6 pb-10 xl:py-[56px]" x-data>
+        <div class="container">
+            <div class="flex flex-col md:flex-row xl:items-center md:justify-between mb-9 md:mb-12 xl:mb-20">
+                <div class="hidden md:block">
+                    <div class="mb-2">
+                        <a href="">
+                            <img src="{% static 'img/logo.svg' %}" alt="Логотип" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="text-xs">Сервис удаления водяных знаков с объявлений</div>
+                </div>
+            </div>   
+            <div class="flex flex-col md:flex-row flex-wrap xl:flex-nowrap gap-6 md:gap-10 justify-between">
+                <div
+                    class="flex flex-col md:flex-row md:w-full xl:w-auto gap-2 md:gap-8 text-[10px] md:text-xs text-gray-500 md:text-black flex-shrink-0 order-3 md:order-1">
+                    <a href="{% static 'terms_of_use.pdf' %}" target="_blank">Пользовательское соглашение</a>
+                    {% comment %} <a href="">Политика конфиденциальности</a> {% endcomment %}
+                    <div>© znak.app 2023</div>
+                </div>
+
+                {% comment %} <div class="text-gray-500 text-[10px] order-2 md:w-2/3 xl:w-[410px]">
+                    Товарищество с ограниченной ответственностью "FORREALTOR (ФОРРИЭЛТОР)"
+                    Местонахождение: Казахстан, город Алматы, Медеуский район, Проспект Достык, здание 43, почтовый
+                    индекс 050010
+                </div> {% endcomment %}
+
+                <div class="flex items-center gap-8 flex-shrink-0 order-1 md:order-3">
+                    <div class="text-xs">
+                        Не работает сервис? <br>Напишите
+                    </div>
+
+                    <div>
+                        <a href="">
+                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="26" height="26" rx="13" fill="#0874B4" />
+                                <path
+                                    d="M17.0198 8.77767L7.29405 12.7851C6.90267 12.9717 6.77024 13.3454 7.19941 13.5483L9.69454 14.3955L15.7273 10.4117C16.0567 10.1616 16.3939 10.2283 16.1038 10.5034L10.9224 15.5161L10.7596 17.6375C10.9104 17.9651 11.1864 17.9666 11.3625 17.8038L12.796 16.3545L15.2511 18.3188C15.8213 18.6796 16.1316 18.4468 16.2542 17.7857L17.8646 9.6382C18.0318 8.82441 17.7466 8.46585 17.0198 8.77767Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="block md:hidden w-[162px] order-4">
+                    <div class="mb-2">
+                        <a href="">
+                            <img src="{% static 'img/logo.svg' %}" alt="Логотип" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="text-[10px]">Сервис удаления водяных знаков с объявлений</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
