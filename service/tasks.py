@@ -16,7 +16,7 @@ def delete_task(number):
     lama.remove(number)
     print(lama, ' delete ', number)
         
-#@app.task
+@app.task
 def execute_lama(lama_number, input_link):
     base_dir = '/home/djangoapp/znakapp/service'
     python_path = sys.executable

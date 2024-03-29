@@ -1,0 +1,2052 @@
+INFO 2024-02-22 23:17:34,655 views Received webhook with Content-Type application/json: {"uuid":"10dc9b75","amount":1299,"vat":259.8,"total_amount":1558.8,"currency":"USD","commission":76.38,"additional_fields":{"telegram_username":"@hdonnelly","birth_date":"11.11.2001"},"exchange_rate":1,"customer_phone":"+1.442.366.6520","customer_name":"Hattie O'Hara Sr.","customer_email":"modesto86@torphy.com","created_at":1708633053,"product_id":1,"product_title":"Introduction To Modeling And Simulation","product_type":"CustomService","trigger_type":"manual"}
+ERROR 2024-02-22 23:17:34,656 views Error processing webhook: 'data'
+WARNING 2024-02-22 23:17:34,656 log Bad Request: /process_webhook/
+WARNING 2024-02-22 23:25:40,370 log Not Found: /api/settings
+WARNING 2024-02-22 23:25:41,929 log Not Found: /api/settings
+INFO 2024-02-22 23:37:06,010 views Received webhook with Content-Type application/json: {"uuid":"43c9c36a","amount":1299,"vat":259.8,"total_amount":1558.8,"currency":"USD","commission":76.38,"additional_fields":{"telegram_username":"@dedric.barton","birth_date":"11.11.2001"},"exchange_rate":1,"customer_phone":"+1-351-469-5571","customer_name":"Prof. Trevor Cruickshank","customer_email":"talia.streich@rippin.com","created_at":1708634224,"product_id":1,"product_title":"Introduction To Modeling And Simulation","product_type":"CustomService","trigger_type":"manual"}
+INFO 2024-02-24 17:58:31,928 autoreload Watching for file changes with StatReloader
+ERROR 2024-02-24 17:58:34,541 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\http\request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2024-02-24 17:58:34,897 log Bad Request: /
+ERROR 2024-02-24 17:58:35,218 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\http\request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2024-02-24 17:58:35,250 log Bad Request: /favicon.ico
+INFO 2024-02-24 17:59:07,885 autoreload D:\WORK\znakapp\znakapp\znakapp\settings.py changed, reloading.
+INFO 2024-02-24 17:59:09,143 autoreload Watching for file changes with StatReloader
+INFO 2024-02-24 18:02:23,817 autoreload Watching for file changes with StatReloader
+WARNING 2024-02-24 18:02:53,364 log Not Found: /favicon.ico
+WARNING 2024-02-24 18:03:26,623 log Forbidden (CSRF token from POST incorrect.): /
+INFO 2024-02-24 18:12:12,410 autoreload Watching for file changes with StatReloader
+<<<<<<< HEAD
+INFO 2024-02-24 18:43:12,470 autoreload Watching for file changes with StatReloader
+WARNING 2024-02-24 18:43:30,343 log Not Found: /favicon.ico
+INFO 2024-02-26 14:16:19,892 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 14:17:15,319 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 14:19:56,180 autoreload Watching for file changes with StatReloader
+ERROR 2024-02-26 14:21:28,007 log Internal Server Error: /cabinet/danila_mecheti@mail.ru
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 136, in cabinet
+    with open(f'{static_dir}/s{number}/info_list.txt,', 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\WORK\\znakapp\\znakapp\\service\\static/s1/info_list.txt,'
+WARNING 2024-02-26 14:21:28,164 log Not Found: /favicon.ico
+INFO 2024-02-26 14:24:29,651 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 16:28:46,083 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 17:22:00,701 autoreload Watching for file changes with StatReloader
+ERROR 2024-02-26 17:28:27,964 log Internal Server Error: /cabinet/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 136, in cabinet
+    with open(f'{static_dir}/s{number}/info_list.txt,', 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\WORK\\znakapp\\znakapp\\service\\static/s1/info_list.txt,'
+WARNING 2024-02-26 17:28:28,135 log Not Found: /favicon.ico
+INFO 2024-02-26 18:25:10,115 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\krisha_kz_parser.py changed, reloading.
+INFO 2024-02-26 18:25:11,415 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 18:25:27,455 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\krisha_kz_parser.py changed, reloading.
+INFO 2024-02-26 18:25:28,628 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 18:25:46,726 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\kz_m2bomber_com_parser.py changed, reloading.
+INFO 2024-02-26 18:25:48,262 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 18:25:50,952 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\kn_kz_parser.py changed, reloading.
+INFO 2024-02-26 18:25:52,058 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 18:25:56,855 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\nedvizhimostpro_kz_parser.py changed, reloading.
+INFO 2024-02-26 18:25:58,198 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 18:26:01,914 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\olx_kz_parser.py changed, reloading.
+INFO 2024-02-26 18:26:03,280 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 18:33:29,575 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\krisha_kz_parser.py changed, reloading.
+INFO 2024-02-26 18:33:30,781 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 19:30:13,174 autoreload D:\WORK\znakapp\znakapp\service\tasks.py changed, reloading.
+INFO 2024-02-26 19:30:14,189 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 19:31:20,043 autoreload D:\WORK\znakapp\znakapp\service\tasks.py changed, reloading.
+INFO 2024-02-26 19:31:21,017 autoreload Watching for file changes with StatReloader
+ERROR 2024-02-26 19:36:44,040 log Internal Server Error: /cabinet/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 136, in cabinet
+    with open(f'{static_dir}/s{number}/info_list.txt,', 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\WORK\\znakapp\\znakapp\\service\\static/s1/info_list.txt,'
+INFO 2024-02-26 19:38:51,052 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-02-26 19:38:52,493 autoreload Watching for file changes with StatReloader
+ERROR 2024-02-26 19:41:25,371 log Internal Server Error: /cabinet/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 136, in cabinet
+    with open(f'{static_dir}/s{number}/info_list.txt,', 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\WORK\\znakapp\\znakapp\\service\\static/s1/info_list.txt,'
+INFO 2024-02-26 19:45:00,107 autoreload D:\WORK\znakapp\znakapp\service\tasks.py changed, reloading.
+INFO 2024-02-26 19:45:01,523 autoreload Watching for file changes with StatReloader
+ERROR 2024-02-26 19:47:41,935 log Internal Server Error: /cabinet/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 136, in cabinet
+    with open(f'{static_dir}/s{number}/info_list.txt,', 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\WORK\\znakapp\\znakapp\\service\\static/s1/info_list.txt,'
+INFO 2024-02-26 19:49:02,458 autoreload D:\WORK\znakapp\znakapp\service\tasks.py changed, reloading.
+INFO 2024-02-26 19:49:03,786 autoreload Watching for file changes with StatReloader
+ERROR 2024-02-26 19:51:39,289 log Internal Server Error: /cabinet/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 136, in cabinet
+    with open(f'{static_dir}/s{number}/info_list.txt,', 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\WORK\\znakapp\\znakapp\\service\\static/s1/info_list.txt,'
+INFO 2024-02-26 19:52:10,745 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-02-26 19:52:12,339 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 19:52:13,921 autoreload D:\WORK\znakapp\znakapp\service\tasks.py changed, reloading.
+INFO 2024-02-26 19:52:15,148 autoreload Watching for file changes with StatReloader
+ERROR 2024-02-26 19:54:37,640 log Internal Server Error: /cabinet/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 136, in cabinet
+    with open(f'{static_out_dir}/s{number}/info_list.txt,', 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\WORK\\znakapp\\znakapp\\service\\static\\out/s1/info_list.txt,'
+INFO 2024-02-26 19:55:44,679 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-02-26 19:55:46,092 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 19:57:38,539 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-02-26 19:57:39,536 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 19:58:28,795 autoreload D:\WORK\znakapp\znakapp\service\tasks.py changed, reloading.
+INFO 2024-02-26 19:58:29,905 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 20:03:03,804 autoreload D:\WORK\znakapp\znakapp\service\tasks.py changed, reloading.
+INFO 2024-02-26 20:03:05,085 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 20:04:10,170 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 20:04:39,711 autoreload Watching for file changes with StatReloader
+ERROR 2024-02-26 20:07:17,790 log Internal Server Error: /cabinet/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 136, in cabinet
+    with open(f'{static_out_dir}\\s{number}\\info_list.txt,', 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\WORK\\znakapp\\znakapp\\service\\static\\out\\s1\\info_list.txt,'
+INFO 2024-02-26 20:08:38,041 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-02-26 20:08:39,379 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 20:09:41,864 autoreload Watching for file changes with StatReloader
+ERROR 2024-02-26 20:11:55,721 log Internal Server Error: /cabinet/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 136, in cabinet
+    with open(f'{static_out_dir}/s{number}/info_list.txt,', 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\WORK\\znakapp\\znakapp\\service\\static\\out/s1/info_list.txt,'
+INFO 2024-02-26 20:12:51,020 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-02-26 20:12:52,189 autoreload Watching for file changes with StatReloader
+ERROR 2024-02-26 20:14:29,699 log Internal Server Error: /cabinet/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 136, in cabinet
+    with open(f'{static_out_dir}\\s{number}\\info_list.txt,', 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\WORK\\znakapp\\znakapp\\service\\static\\out\\s1\\info_list.txt,'
+INFO 2024-02-26 20:17:27,242 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-02-26 20:17:28,676 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 20:17:44,844 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-02-26 20:17:46,347 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 20:18:58,382 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-02-26 20:18:59,406 autoreload Watching for file changes with StatReloader
+ERROR 2024-02-26 20:20:21,534 log Internal Server Error: /cabinet/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 161, in cabinet
+    with open(f'{static_out_dir}/info_list.txt', 'r', encoding='utf-8') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\WORK\\znakapp\\znakapp\\service\\static\\out/info_list.txt'
+INFO 2024-02-26 20:21:14,100 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-02-26 20:21:15,438 autoreload Watching for file changes with StatReloader
+ERROR 2024-02-26 20:21:52,711 log Internal Server Error: /cabinet/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 136, in cabinet
+    with open(f'{static_out_dir}/s{number}/info_list.txt', 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\WORK\\znakapp\\znakapp\\service\\static\\out/s1/info_list.txt'
+INFO 2024-02-26 20:26:03,500 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-02-26 20:26:04,673 autoreload Watching for file changes with StatReloader
+ERROR 2024-02-26 20:28:35,865 log Internal Server Error: /cabinet/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 155, in cabinet
+    os.rename(f'{static_out_dir}/s{number}/{img}', f'{static_out_users_dir}/{user_id}/{clear_history_id}/{img}')
+FileNotFoundError: [WinError 2] Не удается найти указанный файл: 'D:\\WORK\\znakapp\\znakapp\\service\\static\\out/s1/bots1' -> 'D:\\WORK\\znakapp\\znakapp\\service\\static\\users_out/llapb.pahgoma@gmail.com/19/bots1'
+INFO 2024-02-26 20:30:05,343 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-02-26 20:30:06,853 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 20:32:14,567 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-02-26 20:32:15,976 autoreload Watching for file changes with StatReloader
+=======
+INFO 2024-02-24 22:39:39,148 autoreload Watching for file changes with StatReloader
+INFO 2024-02-24 22:40:17,984 autoreload Watching for file changes with StatReloader
+INFO 2024-02-24 23:11:58,949 autoreload Watching for file changes with StatReloader
+INFO 2024-02-24 23:54:22,638 autoreload Watching for file changes with StatReloader
+INFO 2024-02-25 00:02:25,596 autoreload D:\work\znak\znakapp\service\views.py changed, reloading.
+INFO 2024-02-25 00:02:26,664 autoreload Watching for file changes with StatReloader
+INFO 2024-02-25 00:02:50,363 autoreload D:\work\znak\znakapp\service\views.py changed, reloading.
+INFO 2024-02-25 00:02:51,721 autoreload Watching for file changes with StatReloader
+INFO 2024-02-25 00:03:29,084 autoreload D:\work\znak\znakapp\service\views.py changed, reloading.
+INFO 2024-02-25 00:03:30,238 autoreload Watching for file changes with StatReloader
+INFO 2024-02-25 00:03:38,258 autoreload D:\work\znak\znakapp\service\views.py changed, reloading.
+INFO 2024-02-25 00:03:39,454 autoreload Watching for file changes with StatReloader
+INFO 2024-02-25 00:03:44,180 autoreload D:\work\znak\znakapp\service\views.py changed, reloading.
+INFO 2024-02-25 00:03:45,471 autoreload Watching for file changes with StatReloader
+INFO 2024-02-25 00:08:11,349 autoreload D:\work\znak\znakapp\service\views.py changed, reloading.
+INFO 2024-02-25 00:08:12,837 autoreload Watching for file changes with StatReloader
+INFO 2024-02-25 00:09:37,919 autoreload D:\work\znak\znakapp\service\views.py changed, reloading.
+INFO 2024-02-25 00:09:39,135 autoreload Watching for file changes with StatReloader
+INFO 2024-02-25 00:10:52,810 autoreload D:\work\znak\znakapp\service\views.py changed, reloading.
+INFO 2024-02-25 00:10:54,063 autoreload Watching for file changes with StatReloader
+INFO 2024-02-25 00:11:34,224 autoreload D:\work\znak\znakapp\service\views.py changed, reloading.
+INFO 2024-02-25 00:11:35,591 autoreload Watching for file changes with StatReloader
+INFO 2024-02-25 00:12:18,872 autoreload D:\work\znak\znakapp\service\views.py changed, reloading.
+INFO 2024-02-25 00:12:20,159 autoreload Watching for file changes with StatReloader
+INFO 2024-02-25 00:12:23,970 autoreload D:\work\znak\znakapp\service\views.py changed, reloading.
+INFO 2024-02-25 00:12:25,201 autoreload Watching for file changes with StatReloader
+INFO 2024-02-25 00:12:37,330 autoreload D:\work\znak\znakapp\service\views.py changed, reloading.
+INFO 2024-02-25 00:12:38,379 autoreload Watching for file changes with StatReloader
+INFO 2024-02-25 00:14:02,260 autoreload D:\work\znak\znakapp\service\views.py changed, reloading.
+INFO 2024-02-25 00:14:03,598 autoreload Watching for file changes with StatReloader
+INFO 2024-02-25 00:14:30,357 autoreload D:\work\znak\znakapp\service\views.py changed, reloading.
+INFO 2024-02-25 00:14:31,629 autoreload Watching for file changes with StatReloader
+INFO 2024-02-25 00:15:12,907 autoreload D:\work\znak\znakapp\service\views.py changed, reloading.
+INFO 2024-02-25 00:15:14,204 autoreload Watching for file changes with StatReloader
+INFO 2024-02-25 00:16:34,875 autoreload D:\work\znak\znakapp\service\views.py changed, reloading.
+INFO 2024-02-25 00:16:36,110 autoreload Watching for file changes with StatReloader
+INFO 2024-02-25 00:20:24,535 autoreload D:\work\znak\znakapp\service\views.py changed, reloading.
+INFO 2024-02-25 00:20:25,932 autoreload Watching for file changes with StatReloader
+INFO 2024-02-26 17:39:11,532 autoreload Watching for file changes with StatReloader
+ERROR 2024-02-26 18:36:40,131 __init__ Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: IMAGE_PROCESS_FAILED
+ERROR 2024-02-26 18:36:40,132 __init__ Exception traceback:
+Traceback (most recent call last):
+  File "D:\work\znak\znakapp\venv\lib\site-packages\telebot\__init__.py", line 1141, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "D:\work\znak\znakapp\venv\lib\site-packages\telebot\util.py", line 149, in raise_exceptions
+    raise self.exception_info
+  File "D:\work\znak\znakapp\venv\lib\site-packages\telebot\util.py", line 92, in run
+    task(*args, **kwargs)
+  File "D:\work\znak\znakapp\venv\lib\site-packages\telebot\__init__.py", line 7868, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "D:\work\znak\znakapp\service\bot.py", line 120, in link_get
+    self.bot.send_photo(message.chat.id, photo=photo)
+  File "D:\work\znak\znakapp\venv\lib\site-packages\telebot\__init__.py", line 2125, in send_photo
+    apihelper.send_photo(
+  File "D:\work\znak\znakapp\venv\lib\site-packages\telebot\apihelper.py", line 496, in send_photo
+    return _make_request(token, method_url, params=payload, files=files, method='post')
+  File "D:\work\znak\znakapp\venv\lib\site-packages\telebot\apihelper.py", line 164, in _make_request
+    json_result = _check_result(method_name, result)
+  File "D:\work\znak\znakapp\venv\lib\site-packages\telebot\apihelper.py", line 191, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: IMAGE_PROCESS_FAILED
+
+ERROR 2024-02-26 18:37:53,122 __init__ Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: IMAGE_PROCESS_FAILED
+ERROR 2024-02-26 18:37:53,125 __init__ Exception traceback:
+Traceback (most recent call last):
+  File "D:\work\znak\znakapp\venv\lib\site-packages\telebot\__init__.py", line 1141, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "D:\work\znak\znakapp\venv\lib\site-packages\telebot\util.py", line 149, in raise_exceptions
+    raise self.exception_info
+  File "D:\work\znak\znakapp\venv\lib\site-packages\telebot\util.py", line 92, in run
+    task(*args, **kwargs)
+  File "D:\work\znak\znakapp\venv\lib\site-packages\telebot\__init__.py", line 7868, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "D:\work\znak\znakapp\service\bot.py", line 120, in link_get
+    self.bot.send_photo(message.chat.id, photo=photo)
+  File "D:\work\znak\znakapp\venv\lib\site-packages\telebot\__init__.py", line 2125, in send_photo
+    apihelper.send_photo(
+  File "D:\work\znak\znakapp\venv\lib\site-packages\telebot\apihelper.py", line 496, in send_photo
+    return _make_request(token, method_url, params=payload, files=files, method='post')
+  File "D:\work\znak\znakapp\venv\lib\site-packages\telebot\apihelper.py", line 164, in _make_request
+    json_result = _check_result(method_name, result)
+  File "D:\work\znak\znakapp\venv\lib\site-packages\telebot\apihelper.py", line 191, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: IMAGE_PROCESS_FAILED
+
+>>>>>>> 1406f0b20799b8b0ed3270eceb18b6484b21539c
+INFO 2024-02-26 20:59:42,624 autoreload Watching for file changes with StatReloader
+INFO 2024-02-27 18:53:16,209 autoreload Watching for file changes with StatReloader
+WARNING 2024-02-27 19:19:59,027 log Not Found: /favicon.ico
+INFO 2024-02-27 19:40:20,397 autoreload D:\WORK\znakapp\znakapp\service\tasks.py changed, reloading.
+INFO 2024-02-27 19:40:21,699 autoreload Watching for file changes with StatReloader
+INFO 2024-02-27 19:40:34,669 autoreload D:\WORK\znakapp\znakapp\service\tasks.py changed, reloading.
+INFO 2024-02-27 19:40:35,645 autoreload Watching for file changes with StatReloader
+INFO 2024-02-27 19:42:03,354 autoreload D:\WORK\znakapp\znakapp\service\tasks.py changed, reloading.
+INFO 2024-02-27 19:42:05,568 autoreload Watching for file changes with StatReloader
+ERROR 2024-02-27 19:43:13,772 redis Connection to Redis lost: Retry (0/20) now.
+ERROR 2024-02-27 19:43:15,808 redis Connection to Redis lost: Retry (1/20) in 1.00 second.
+ERROR 2024-02-27 19:43:18,853 redis Connection to Redis lost: Retry (2/20) in 1.00 second.
+ERROR 2024-02-27 19:43:21,903 redis Connection to Redis lost: Retry (3/20) in 1.00 second.
+ERROR 2024-02-27 19:43:24,948 redis Connection to Redis lost: Retry (4/20) in 1.00 second.
+ERROR 2024-02-27 19:43:27,998 redis Connection to Redis lost: Retry (5/20) in 1.00 second.
+ERROR 2024-02-27 19:43:31,039 redis Connection to Redis lost: Retry (6/20) in 1.00 second.
+ERROR 2024-02-27 19:43:34,101 redis Connection to Redis lost: Retry (7/20) in 1.00 second.
+ERROR 2024-02-27 19:43:37,156 redis Connection to Redis lost: Retry (8/20) in 1.00 second.
+ERROR 2024-02-27 19:43:40,210 redis Connection to Redis lost: Retry (9/20) in 1.00 second.
+ERROR 2024-02-27 19:43:43,258 redis Connection to Redis lost: Retry (10/20) in 1.00 second.
+ERROR 2024-02-27 19:43:46,309 redis Connection to Redis lost: Retry (11/20) in 1.00 second.
+ERROR 2024-02-27 19:43:49,375 redis Connection to Redis lost: Retry (12/20) in 1.00 second.
+ERROR 2024-02-27 19:43:52,422 redis Connection to Redis lost: Retry (13/20) in 1.00 second.
+ERROR 2024-02-27 19:43:55,465 redis Connection to Redis lost: Retry (14/20) in 1.00 second.
+ERROR 2024-02-27 19:43:58,511 redis Connection to Redis lost: Retry (15/20) in 1.00 second.
+ERROR 2024-02-27 19:44:01,563 redis Connection to Redis lost: Retry (16/20) in 1.00 second.
+ERROR 2024-02-27 19:44:04,630 redis Connection to Redis lost: Retry (17/20) in 1.00 second.
+ERROR 2024-02-27 19:44:07,683 redis Connection to Redis lost: Retry (18/20) in 1.00 second.
+ERROR 2024-02-27 19:44:10,737 redis Connection to Redis lost: Retry (19/20) in 1.00 second.
+CRITICAL 2024-02-27 19:44:13,793 redis 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+INFO 2024-02-29 20:17:26,035 autoreload Watching for file changes with StatReloader
+ERROR 2024-02-29 20:18:08,912 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 73, in index
+    photos[0] = 'first_img.png'
+IndexError: list assignment index out of range
+WARNING 2024-02-29 20:18:09,046 log Not Found: /favicon.ico
+ERROR 2024-03-01 16:01:42,465 signal Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001BB89A1FA30>> raised: SyntaxError('invalid syntax', ('D:\\WORK\\znakapp\\znakapp\\service\\parsers_znakapp\\p1\\main.py', 29, 1, '/home/djangoapp/znakapp/service/\n'))
+Traceback (most recent call last):
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\celery\fixups\django.py", line 97, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\celery\fixups\django.py", line 137, in validate_models
+    run_checks()
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\core\checks\urls.py", line 42, in check_url_namespaces_unique
+    all_namespaces = _load_all_namespaces(resolver)
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\core\checks\urls.py", line 61, in _load_all_namespaces
+    url_patterns = getattr(resolver, "url_patterns", [])
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\urls\resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\urls\resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "D:\WORK\znakapp\znakapp\znakapp\urls.py", line 23, in <module>
+    path('', include('service.urls')),
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\urls\conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "D:\WORK\znakapp\znakapp\service\urls.py", line 2, in <module>
+    from . import views
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 12, in <module>
+    from .parsers_znakapp.p1.main import main as parsers_img
+  File "D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\main.py", line 29
+    /home/djangoapp/znakapp/service/
+    ^
+SyntaxError: invalid syntax
+ERROR 2024-03-01 16:02:57,002 signal Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x00000205E3F6EA30>> raised: SyntaxError('invalid syntax', ('D:\\WORK\\znakapp\\znakapp\\service\\parsers_znakapp\\p1\\main.py', 29, 1, '/home/djangoapp/znakapp/service/\n'))
+Traceback (most recent call last):
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\celery\fixups\django.py", line 97, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\celery\fixups\django.py", line 137, in validate_models
+    run_checks()
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\core\checks\urls.py", line 42, in check_url_namespaces_unique
+    all_namespaces = _load_all_namespaces(resolver)
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\core\checks\urls.py", line 61, in _load_all_namespaces
+    url_patterns = getattr(resolver, "url_patterns", [])
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\urls\resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\urls\resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "D:\WORK\znakapp\znakapp\znakapp\urls.py", line 23, in <module>
+    path('', include('service.urls')),
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\urls\conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "D:\WORK\znakapp\znakapp\service\urls.py", line 2, in <module>
+    from . import views
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 12, in <module>
+    from .parsers_znakapp.p1.main import main as parsers_img
+  File "D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\main.py", line 29
+    /home/djangoapp/znakapp/service/
+    ^
+SyntaxError: invalid syntax
+ERROR 2024-03-01 16:03:18,754 signal Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001EE6910FA30>> raised: SyntaxError('invalid syntax', ('D:\\WORK\\znakapp\\znakapp\\service\\parsers_znakapp\\p1\\main.py', 29, 1, '/home/djangoapp/znakapp/service/\n'))
+Traceback (most recent call last):
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\celery\fixups\django.py", line 97, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\celery\fixups\django.py", line 137, in validate_models
+    run_checks()
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\core\checks\urls.py", line 42, in check_url_namespaces_unique
+    all_namespaces = _load_all_namespaces(resolver)
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\core\checks\urls.py", line 61, in _load_all_namespaces
+    url_patterns = getattr(resolver, "url_patterns", [])
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\urls\resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\urls\resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "D:\WORK\znakapp\znakapp\znakapp\urls.py", line 23, in <module>
+    path('', include('service.urls')),
+  File "d:\work\znakapp\znakapp\venv\lib\site-packages\django\urls\conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "D:\WORK\znakapp\znakapp\service\urls.py", line 2, in <module>
+    from . import views
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 12, in <module>
+    from .parsers_znakapp.p1.main import main as parsers_img
+  File "D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\main.py", line 29
+    /home/djangoapp/znakapp/service/
+    ^
+SyntaxError: invalid syntax
+INFO 2024-03-01 16:04:10,495 autoreload Watching for file changes with StatReloader
+INFO 2024-03-01 16:04:13,072 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\main.py changed, reloading.
+INFO 2024-03-01 16:04:14,156 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-01 16:04:46,690 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 73, in index
+    photos[0] = 'first_img.png'
+IndexError: list assignment index out of range
+WARNING 2024-03-01 16:04:46,960 log Not Found: /favicon.ico
+ERROR 2024-03-01 16:06:07,405 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 73, in index
+    photos[0] = 'first_img.png'
+IndexError: list assignment index out of range
+INFO 2024-03-01 16:07:37,773 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\krisha_kz_parser.py changed, reloading.
+INFO 2024-03-01 16:07:38,922 autoreload Watching for file changes with StatReloader
+INFO 2024-03-01 16:08:05,879 autoreload D:\WORK\znakapp\znakapp\service\tasks.py changed, reloading.
+INFO 2024-03-01 16:08:06,803 autoreload Watching for file changes with StatReloader
+INFO 2024-03-01 16:08:29,602 autoreload Watching for file changes with StatReloader
+INFO 2024-03-01 16:09:59,250 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-01 16:10:00,617 autoreload Watching for file changes with StatReloader
+INFO 2024-03-01 16:10:50,833 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-01 16:10:52,941 autoreload Watching for file changes with StatReloader
+INFO 2024-03-01 16:31:53,564 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-01 16:31:54,961 autoreload Watching for file changes with StatReloader
+INFO 2024-03-04 18:26:25,919 autoreload Watching for file changes with StatReloader
+WARNING 2024-03-04 18:26:43,303 log Not Found: /favicon.ico
+ERROR 2024-03-04 18:26:53,621 log Internal Server Error: /admin/service/cart/
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: service_cart.trial_price_tn
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\contrib\admin\options.py", line 2065, in changelist_view
+    "selection_note": _("0 of %(cnt)s selected") % {"cnt": len(cl.result_list)},
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\models\query.py", line 380, in __len__
+    self._fetch_all()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1560, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: service_cart.trial_price_tn
+ERROR 2024-03-04 18:27:45,557 log Internal Server Error: /admin/service/cart/
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: service_cart.trial_price_tn
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\contrib\admin\options.py", line 2065, in changelist_view
+    "selection_note": _("0 of %(cnt)s selected") % {"cnt": len(cl.result_list)},
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\models\query.py", line 380, in __len__
+    self._fetch_all()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1560, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: service_cart.trial_price_tn
+INFO 2024-03-04 18:28:07,056 autoreload D:\WORK\znakapp\znakapp\service\models.py changed, reloading.
+INFO 2024-03-04 18:28:08,479 autoreload Watching for file changes with StatReloader
+INFO 2024-03-04 18:28:51,365 autoreload D:\WORK\znakapp\znakapp\service\models.py changed, reloading.
+INFO 2024-03-04 18:28:52,400 autoreload Watching for file changes with StatReloader
+INFO 2024-03-04 18:30:19,485 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-04 18:33:14,739 log Internal Server Error: /price-list/
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 103, in price_list
+    return render(request, 'service/price.html',{'user_mail': request.user.email, "cart":cart})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 484, in parse
+    raise self.error(token, e)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 673, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse some characters: |(cart.trial_price_tn/1)||floatformat:0
+ERROR 2024-03-04 18:34:07,021 log Internal Server Error: /price-list/
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 103, in price_list
+    return render(request, 'service/price.html',{'user_mail': request.user.email, "cart":cart})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 484, in parse
+    raise self.error(token, e)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 673, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse some characters: |(cart.trial_price_tn/cart.trial_bonus)||floatformat:0
+ERROR 2024-03-04 18:35:32,989 log Internal Server Error: /price-list/
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 103, in price_list
+    return render(request, 'service/price.html',{'user_mail': request.user.email, "cart":cart})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 484, in parse
+    raise self.error(token, e)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 673, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse some characters: cart.trial_price_tn|/cart.trial_bonus||floatformat:0
+ERROR 2024-03-04 18:37:41,560 log Internal Server Error: /price-list/
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 103, in price_list
+    return render(request, 'service/price.html',{'user_mail': request.user.email, "cart":cart})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 484, in parse
+    raise self.error(token, e)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '/cart.trial_bonus' from 'cart.trial_price_tn/cart.trial_bonus'
+ERROR 2024-03-04 18:37:43,315 log Internal Server Error: /price-list/
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 103, in price_list
+    return render(request, 'service/price.html',{'user_mail': request.user.email, "cart":cart})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 484, in parse
+    raise self.error(token, e)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '/cart.trial_bonus' from 'cart.trial_price_tn/cart.trial_bonus'
+ERROR 2024-03-04 18:37:44,285 log Internal Server Error: /price-list/
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 103, in price_list
+    return render(request, 'service/price.html',{'user_mail': request.user.email, "cart":cart})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 484, in parse
+    raise self.error(token, e)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '/cart.trial_bonus' from 'cart.trial_price_tn/cart.trial_bonus'
+ERROR 2024-03-04 18:38:36,142 log Internal Server Error: /price-list/
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 103, in price_list
+    return render(request, 'service/price.html',{'user_mail': request.user.email, "cart":cart})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 484, in parse
+    raise self.error(token, e)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 673, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse some characters: |(cart.beginer_price_tn/(cart.beginer_quantity+cart.beginner_bonus))||floatformat:0
+ERROR 2024-03-04 18:39:22,269 log Internal Server Error: /price-list/
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 103, in price_list
+    return render(request, 'service/price.html',{'user_mail': request.user.email, "cart":cart})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 484, in parse
+    raise self.error(token, e)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 673, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse some characters: |(cart.beginer_price_tn / (cart.beginer_quantity + cart.beginner_bonus))||floatformat:0
+ERROR 2024-03-04 18:40:59,171 log Internal Server Error: /price-list/
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 103, in price_list
+    return render(request, 'service/price.html',{'user_mail': request.user.email, "cart":cart})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 484, in parse
+    raise self.error(token, e)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(cart.beginer_price_tn / (cart.beginer_quantity + cart.beginner_bonus))' from '(cart.beginer_price_tn / (cart.beginer_quantity + cart.beginner_bonus))'
+ERROR 2024-03-04 18:41:30,153 log Internal Server Error: /price-list/
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 103, in price_list
+    return render(request, 'service/price.html',{'user_mail': request.user.email, "cart":cart})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 484, in parse
+    raise self.error(token, e)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ' / (cart.beginer_quantity + cart.beginner_bonus)' from 'cart.beginer_price_tn / (cart.beginer_quantity + cart.beginner_bonus)'
+ERROR 2024-03-04 18:44:10,845 log Internal Server Error: /price-list/
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 103, in price_list
+    return render(request, 'service/price.html',{'user_mail': request.user.email, "cart":cart})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 484, in parse
+    raise self.error(token, e)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ' / (cart.beginer_quantity + cart.beginer_bonus)' from 'cart.beginer_price_tn / (cart.beginer_quantity + cart.beginer_bonus)'
+INFO 2024-03-04 18:47:25,727 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-04 18:47:27,036 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-04 18:47:36,828 log Internal Server Error: /price-list/
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 106, in price_list
+    return render(request, 'service/price.html',{'user_mail': request.user.email, "cart":cart})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 484, in parse
+    raise self.error(token, e)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ' / (cart.beginer_quantity + cart.beginer_bonus)' from 'cart.beginer_price_tn / (cart.beginer_quantity + cart.beginer_bonus)'
+INFO 2024-03-04 19:03:16,237 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-04 19:03:17,573 autoreload Watching for file changes with StatReloader
+INFO 2024-03-04 19:04:17,615 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-04 19:04:18,678 autoreload Watching for file changes with StatReloader
+INFO 2024-03-04 19:04:39,059 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-04 19:04:40,078 autoreload Watching for file changes with StatReloader
+INFO 2024-03-04 19:05:06,599 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-04 19:05:07,602 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-04 19:10:17,257 log Internal Server Error: /cabinet/aaa@aaa.aaa
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 210, in cabinet
+    {'user_id': user_id,'tarif':tarif,'count':count,'bonus_count':bonus_count,'user_info': int(balance), 'user_request': user_request, 'cart': cart})
+UnboundLocalError: local variable 'bonus_count' referenced before assignment
+ERROR 2024-03-04 19:12:23,868 log Internal Server Error: /cabinet/aaa@aaa.aaa
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 210, in cabinet
+    {'user_id': user_id,'tarif':tarif,'count':count,'bonus_count':bonus_count,'user_info': int(balance), 'user_request': user_request, 'cart': cart})
+UnboundLocalError: local variable 'bonus_count' referenced before assignment
+ERROR 2024-03-04 19:23:34,348 log Internal Server Error: /cabinet/danila_mecheti@mail.ru
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 210, in cabinet
+    {'user_id': user_id,'tarif':tarif,'count':count,'bonus_count':bonus_count,'user_info': int(balance), 'user_request': user_request, 'cart': cart})
+UnboundLocalError: local variable 'bonus_count' referenced before assignment
+INFO 2024-03-04 19:36:00,144 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-04 19:36:01,259 autoreload Watching for file changes with StatReloader
+INFO 2024-03-04 19:36:15,168 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-04 19:36:16,306 autoreload Watching for file changes with StatReloader
+INFO 2024-03-04 19:42:18,755 autoreload Watching for file changes with StatReloader
+INFO 2024-03-04 19:43:56,301 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-04 19:43:57,538 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-04 19:44:02,666 log Internal Server Error: /price-cabinet/danila_mecheti@mail.ru
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 347, in price_cabinet
+    return render(request, 'service/price-cabinet.html', {"user_id": user_id,"cart":cart , "cart_beginer" : cart_beginer, "cart_advanced": cart_advanced, "cart_expert": cart_expert, "cart_trial": cart_trial})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: service/price-cabinet.html
+ERROR 2024-03-04 19:44:09,828 log Internal Server Error: /price-cabinet/danila_mecheti@mail.ru
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 347, in price_cabinet
+    return render(request, 'service/price-cabinet.html', {"user_id": user_id,"cart":cart , "cart_beginer" : cart_beginer, "cart_advanced": cart_advanced, "cart_expert": cart_expert, "cart_trial": cart_trial})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: service/price-cabinet.html
+INFO 2024-03-04 19:44:45,995 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-04 19:44:47,116 autoreload Watching for file changes with StatReloader
+INFO 2024-03-04 19:48:47,440 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\main.py changed, reloading.
+INFO 2024-03-04 19:48:48,650 autoreload Watching for file changes with StatReloader
+INFO 2024-03-04 19:48:54,128 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\main.py changed, reloading.
+INFO 2024-03-04 19:48:55,224 autoreload Watching for file changes with StatReloader
+INFO 2024-03-04 19:49:26,086 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\kn_kz_parser.py changed, reloading.
+INFO 2024-03-04 19:49:27,063 autoreload Watching for file changes with StatReloader
+INFO 2024-03-04 19:50:44,232 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\kn_kz_parser.py changed, reloading.
+INFO 2024-03-04 19:50:45,289 autoreload Watching for file changes with StatReloader
+INFO 2024-03-04 20:04:32,672 autoreload Watching for file changes with StatReloader
+INFO 2024-03-05 17:47:33,147 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-05 17:53:13,947 log Internal Server Error: /user_history/llapb.pahgoma@gmail.com/download/18
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 309, in download_images
+    files = os.listdir(static_out_users_imgs_dir)
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'D:\\WORK\\znakapp\\znakapp\\service\\static/users_out/llapb.pahgoma@gmail.com/18/'
+WARNING 2024-03-05 17:53:14,093 log Not Found: /favicon.ico
+INFO 2024-03-05 18:06:32,035 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-05 18:06:33,368 autoreload Watching for file changes with StatReloader
+INFO 2024-03-05 18:09:46,462 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-05 18:09:47,477 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-05 18:13:57,404 log Internal Server Error: /user_history/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 359, in history
+    return render(request, 'service/history.html',{"user_id": user_id, 'user_request': user_request, **data_from_base})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'photos_histoty user_id=user_id elem_id=elem.id' not found. 'photos_histoty user_id=user_id elem_id=elem.id' is not a valid view function or pattern name.
+INFO 2024-03-05 18:14:07,997 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-05 18:14:09,352 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-05 18:15:01,860 log Internal Server Error: /user_history/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 359, in history
+    return render(request, 'service/history.html',{"user_id": user_id, 'user_request': user_request, **data_from_base})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'photos_histoty user_id=user_id elem_id=elem.id' not found. 'photos_histoty user_id=user_id elem_id=elem.id' is not a valid view function or pattern name.
+INFO 2024-03-05 18:15:18,446 autoreload D:\WORK\znakapp\znakapp\service\urls.py changed, reloading.
+INFO 2024-03-05 18:15:19,390 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-05 18:15:37,642 log Internal Server Error: /user_history/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 359, in history
+    return render(request, 'service/history.html',{"user_id": user_id, 'user_request': user_request, **data_from_base})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'photos_histoty user_id=user_id elem_id=elem.id' not found. 'photos_histoty user_id=user_id elem_id=elem.id' is not a valid view function or pattern name.
+ERROR 2024-03-05 18:15:38,560 log Internal Server Error: /user_history/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 359, in history
+    return render(request, 'service/history.html',{"user_id": user_id, 'user_request': user_request, **data_from_base})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'photos_histoty user_id=user_id elem_id=elem.id' not found. 'photos_histoty user_id=user_id elem_id=elem.id' is not a valid view function or pattern name.
+ERROR 2024-03-05 18:15:39,245 log Internal Server Error: /user_history/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 359, in history
+    return render(request, 'service/history.html',{"user_id": user_id, 'user_request': user_request, **data_from_base})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'photos_histoty user_id=user_id elem_id=elem.id' not found. 'photos_histoty user_id=user_id elem_id=elem.id' is not a valid view function or pattern name.
+INFO 2024-03-05 18:16:09,564 autoreload D:\WORK\znakapp\znakapp\service\urls.py changed, reloading.
+INFO 2024-03-05 18:16:10,724 autoreload Watching for file changes with StatReloader
+INFO 2024-03-05 18:16:50,564 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-05 18:16:51,773 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-05 18:17:34,018 log Internal Server Error: /user_history/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 359, in history
+    return render(request, 'service/history.html',{"user_id": user_id, 'user_request': user_request, **data_from_base})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'photos_histoty user_id=user_id element_id=elem.id' not found. 'photos_histoty user_id=user_id element_id=elem.id' is not a valid view function or pattern name.
+ERROR 2024-03-05 18:17:57,067 log Internal Server Error: /user_history/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 359, in history
+    return render(request, 'service/history.html',{"user_id": user_id, 'user_request': user_request, **data_from_base})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 1387, in url
+    kwargs[name] = parser.compile_filter(value)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '"' from 'elem.id"'
+ERROR 2024-03-05 18:17:58,565 log Internal Server Error: /user_history/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 359, in history
+    return render(request, 'service/history.html',{"user_id": user_id, 'user_request': user_request, **data_from_base})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 1387, in url
+    kwargs[name] = parser.compile_filter(value)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '"' from 'elem.id"'
+ERROR 2024-03-05 18:18:09,917 log Internal Server Error: /user_history/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 359, in history
+    return render(request, 'service/history.html',{"user_id": user_id, 'user_request': user_request, **data_from_base})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'photos_histoty' not found. 'photos_histoty' is not a valid view function or pattern name.
+ERROR 2024-03-05 18:18:11,052 log Internal Server Error: /user_history/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 359, in history
+    return render(request, 'service/history.html',{"user_id": user_id, 'user_request': user_request, **data_from_base})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'photos_histoty' not found. 'photos_histoty' is not a valid view function or pattern name.
+ERROR 2024-03-05 18:18:12,416 log Internal Server Error: /user_history/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 359, in history
+    return render(request, 'service/history.html',{"user_id": user_id, 'user_request': user_request, **data_from_base})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'photos_histoty' not found. 'photos_histoty' is not a valid view function or pattern name.
+INFO 2024-03-05 18:19:05,101 autoreload D:\WORK\znakapp\znakapp\service\urls.py changed, reloading.
+INFO 2024-03-05 18:19:06,104 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-05 18:19:29,828 log Internal Server Error: /user_history/llapb.pahgoma@gmail.com
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 359, in history
+    return render(request, 'service/history.html',{"user_id": user_id, 'user_request': user_request, **data_from_base})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'photos_histoty' not found. 'photos_histoty' is not a valid view function or pattern name.
+INFO 2024-03-05 18:19:56,469 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-05 18:19:57,652 autoreload Watching for file changes with StatReloader
+WARNING 2024-03-05 18:20:26,153 log Not Found: /js/scripts.js
+ERROR 2024-03-05 18:20:28,168 log Internal Server Error: /user-history/llapb.pahgoma@gmail.com/18
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: open_photos() got an unexpected keyword argument 'element_id'
+INFO 2024-03-05 18:20:41,340 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-05 18:20:42,693 autoreload Watching for file changes with StatReloader
+INFO 2024-03-05 18:23:24,534 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-05 18:23:25,476 autoreload Watching for file changes with StatReloader
+INFO 2024-03-05 18:28:37,831 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-05 18:28:39,015 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-05 18:29:02,410 log Internal Server Error: /user-history/llapb.pahgoma@gmail.com/18
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 408, in open_photos
+    photos = os.listdir(f'{static_out_users_dir}/{user_id}/{element_id}')
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'D:\\WORK\\znakapp\\znakapp\\service\\static\\users_out/llapb.pahgoma@gmail.com/18'
+INFO 2024-03-05 18:30:23,245 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-05 18:30:24,193 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-05 18:30:47,882 log Internal Server Error: /user-history/llapb.pahgoma@gmail.com/19
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 414, in open_photos
+    with open(f'{static_out_users_dir}/{user_id}/{element_id}/info_list.txt', 'r', encoding='utf-8') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\WORK\\znakapp\\znakapp\\service\\static\\users_out/llapb.pahgoma@gmail.com/19/info_list.txt'
+INFO 2024-03-05 18:31:33,606 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-05 18:31:34,670 autoreload Watching for file changes with StatReloader
+WARNING 2024-03-05 18:34:54,552 log Not Found: /фвьшт
+INFO 2024-03-05 18:43:42,943 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-06 19:39:13,887 autoreload Watching for file changes with StatReloader
+INFO 2024-03-13 19:24:49,876 autoreload Watching for file changes with StatReloader
+INFO 2024-03-14 20:18:22,541 autoreload Watching for file changes with StatReloader
+INFO 2024-03-14 20:21:58,255 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-14 20:22:13,520 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 57, in index
+    result = execute_lama.delay(number, input_value)
+AttributeError: 'function' object has no attribute 'delay'
+WARNING 2024-03-14 20:22:13,724 log Not Found: /favicon.ico
+INFO 2024-03-14 20:23:00,180 autoreload D:\WORK\znakapp\znakapp\service\views.py changed, reloading.
+INFO 2024-03-14 20:23:01,154 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-14 20:23:29,620 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 73, in index
+    photos[0] = 'first_img.png'
+IndexError: list assignment index out of range
+INFO 2024-03-14 20:23:55,027 autoreload Watching for file changes with StatReloader
+INFO 2024-03-14 20:24:13,759 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\main.py changed, reloading.
+INFO 2024-03-14 20:24:14,773 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-14 20:24:36,739 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 73, in index
+    photos[0] = 'first_img.png'
+IndexError: list assignment index out of range
+INFO 2024-03-14 20:26:30,293 autoreload Watching for file changes with StatReloader
+INFO 2024-03-14 20:27:09,924 autoreload Watching for file changes with StatReloader
+INFO 2024-03-14 20:28:04,276 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\main.py changed, reloading.
+INFO 2024-03-14 20:28:05,224 autoreload Watching for file changes with StatReloader
+INFO 2024-03-14 20:28:20,085 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\main.py changed, reloading.
+INFO 2024-03-14 20:28:21,074 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-14 20:28:36,683 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 73, in index
+    photos[0] = 'first_img.png'
+IndexError: list assignment index out of range
+INFO 2024-03-14 20:28:40,304 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\main.py changed, reloading.
+INFO 2024-03-14 20:28:41,408 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-14 20:29:03,739 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 73, in index
+    photos[0] = 'first_img.png'
+IndexError: list assignment index out of range
+INFO 2024-03-14 20:29:32,017 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\main.py changed, reloading.
+INFO 2024-03-14 20:29:33,036 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-14 20:29:48,939 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 73, in index
+    photos[0] = 'first_img.png'
+IndexError: list assignment index out of range
+INFO 2024-03-14 20:32:30,885 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\main.py changed, reloading.
+INFO 2024-03-14 20:32:31,878 autoreload Watching for file changes with StatReloader
+INFO 2024-03-14 20:33:49,414 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\main.py changed, reloading.
+INFO 2024-03-14 20:33:50,380 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-14 20:34:07,912 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 73, in index
+    photos[0] = 'first_img.png'
+IndexError: list assignment index out of range
+INFO 2024-03-14 20:34:08,590 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\main.py changed, reloading.
+INFO 2024-03-14 20:34:09,708 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-14 20:34:25,218 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 73, in index
+    photos[0] = 'first_img.png'
+IndexError: list assignment index out of range
+INFO 2024-03-14 20:34:32,712 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\main.py changed, reloading.
+INFO 2024-03-14 20:34:33,909 autoreload Watching for file changes with StatReloader
+INFO 2024-03-14 20:35:34,063 autoreload Watching for file changes with StatReloader
+INFO 2024-03-14 20:36:57,215 autoreload Watching for file changes with StatReloader
+INFO 2024-03-14 20:37:40,800 autoreload D:\WORK\znakapp\znakapp\service\tasks.py changed, reloading.
+INFO 2024-03-14 20:37:41,845 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-14 20:37:57,247 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 75, in index
+    photos.remove('info_list.txt')
+ValueError: list.remove(x): x not in list
+ERROR 2024-03-14 20:44:15,109 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 75, in index
+    photos.remove('info_list.txt')
+ValueError: list.remove(x): x not in list
+ERROR 2024-03-14 20:47:47,494 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 75, in index
+    photos.remove('info_list.txt')
+ValueError: list.remove(x): x not in list
+ERROR 2024-03-14 20:49:24,019 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 75, in index
+    photos.remove('info_list.txt')
+ValueError: list.remove(x): x not in list
+INFO 2024-03-14 20:49:57,876 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\kn_kz_parser.py changed, reloading.
+INFO 2024-03-14 20:49:59,047 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-14 20:50:09,137 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 75, in index
+    photos.remove('info_list.txt')
+ValueError: list.remove(x): x not in list
+ERROR 2024-03-14 20:50:09,977 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 75, in index
+    photos.remove('info_list.txt')
+ValueError: list.remove(x): x not in list
+INFO 2024-03-14 20:50:36,914 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-14 20:50:52,179 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 75, in index
+    photos.remove('info_list.txt')
+ValueError: list.remove(x): x not in list
+INFO 2024-03-14 20:51:17,470 autoreload D:\WORK\znakapp\znakapp\service\tasks.py changed, reloading.
+INFO 2024-03-14 20:51:18,386 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-14 20:55:39,067 log Internal Server Error: /cabinet/danila_mecheti@mail.ru
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 182, in cabinet
+    return render(request, 'service/app.html', {'user_id': user_id,'tarif':tarif,'count':count,'bonus_count':bonus_count,'photos': photos, 'dt': clear_history_id,'context': context, **data_from_base})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'download_image' not found. 'download_image' is not a valid view function or pattern name.
+ERROR 2024-03-14 21:11:11,687 log Internal Server Error: /cabinet/danila_mecheti@mail.ru
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 182, in cabinet
+    return render(request, 'service/app.html', {'user_id': user_id,'tarif':tarif,'count':count,'bonus_count':bonus_count,'photos': photos, 'dt': clear_history_id,'context': context, **data_from_base})
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'download_image' not found. 'download_image' is not a valid view function or pattern name.
+WARNING 2024-03-14 21:11:11,886 log Not Found: /favicon.ico
+INFO 2024-03-15 16:49:52,665 autoreload Watching for file changes with StatReloader
+INFO 2024-03-15 16:53:59,545 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\krisha_kz_parser.py changed, reloading.
+INFO 2024-03-15 16:54:05,100 autoreload Watching for file changes with StatReloader
+INFO 2024-03-15 16:57:24,242 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\krisha_kz_parser.py changed, reloading.
+INFO 2024-03-15 16:57:29,579 autoreload Watching for file changes with StatReloader
+INFO 2024-03-16 09:53:06,014 autoreload Watching for file changes with StatReloader
+INFO 2024-03-16 09:54:01,746 autoreload D:\WORK\znakapp\znakapp\service\parsers_znakapp\p1\krisha_kz_parser.py changed, reloading.
+INFO 2024-03-16 09:54:05,251 autoreload Watching for file changes with StatReloader
+INFO 2024-03-16 09:54:31,212 autoreload Watching for file changes with StatReloader
+INFO 2024-03-16 09:55:55,317 autoreload Watching for file changes with StatReloader
+INFO 2024-03-16 15:04:22,549 autoreload Watching for file changes with StatReloader
+ERROR 2024-03-16 15:17:57,249 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\WORK\znakapp\znakapp\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\znakapp\znakapp\service\views.py", line 75, in index
+    photos.remove('info_list.txt')
+ValueError: list.remove(x): x not in list
+WARNING 2024-03-16 15:17:57,479 log Not Found: /favicon.ico
