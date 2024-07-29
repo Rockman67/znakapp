@@ -20,5 +20,6 @@ urlpatterns = [
     path('telegram-bot-info',views.tg_info,name='tg_info'),
     path('api-info', views.api_info, name='api_info'),
     path('api-cabinet/<str:user_id>', views.api_cabinet, name='api_cabinet'),
-    path('process_webhook/',views.process_webhook,name='process_webhook')
+    path('process_webhook/',views.process_webhook,name='process_webhook'),
+    path('download_image/<str:user_id>/<str:clear_history_id>/<str:filename>/', views.download_image, name='download_image')
 ]

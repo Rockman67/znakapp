@@ -1,3 +1,4 @@
+import json  # Добавьте этот импорт в начале файла
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.db.models import F
@@ -14,8 +15,7 @@ from django.core.mail import EmailMessage
 from itsdangerous import URLSafeTimedSerializer
 from django.conf import settings
 from .gen_rfс import xor_encrypt_decrypt
-from django.urls import reverse
-from django.http import JsonResponse
+from django.http import JsonResponse, FileResponse
 from .webhook import process_json_data
 from .tasks import execute_lama, get_active_tasks, delete_task
 from celery import current_app
@@ -32,7 +32,6 @@ static_out_users_dir = os.path.join(base_dir, 'static', 'users_out')
 mask_path = os.path.join(base_dir, 'lama', 'prepare_masks.py')
 lama_path = os.path.join(base_dir, 'lama', 'lama', 'bin', 'predict.py')
 python_path = sys.executable
-
 
 def index(request):
     if request.method == 'POST':
@@ -53,10 +52,10 @@ def index(request):
                 number = get_active_tasks()
                 result = execute_lama.delay(number, input_value)
                 print(f"Lama {number} started")
-                id = result.id
+                task_id = result.id
                 while True:
-                    task = current_app.AsyncResult(id)
-                    time.sleep(1)
+                    task = current_app.AsyncResult(task_id)
+                    time.sleep(0.5)
                     if task.status == "SUCCESS":
                         print(f"Thread {number}: OK") 
                         delete_task(number)
@@ -68,9 +67,7 @@ def index(request):
                 else:
                     pass
                 photos[0] = 'first_img.png'
-                print(photos)
                 photos.remove('info_list.txt')
-                print(photos)
 
                 with open(f'{static_out_dir}/s{number}/info_list.txt', 'r',  encoding='utf-8') as file:
                     data = file.read()
@@ -84,8 +81,6 @@ def index(request):
         return render(request, 'service/index.html',{'user_mail': request.user.email})    
   
     return render(request, 'service/index.html')
-
-
 
 def price_list(request):
     if request.method == 'POST':
@@ -104,7 +99,6 @@ def price_list(request):
         return render(request, 'service/price.html',{'user_mail': request.user.email, "cart":cart , "cart_trial": cart_trial, "cart_beginer" : cart_beginer, "cart_advanced": cart_advanced, "cart_expert": cart_expert })  
     return render(request, 'service/price.html', {"cart":cart , "cart_beginer" : cart_beginer, "cart_advanced": cart_advanced, "cart_expert": cart_expert, "cart_trial": cart_trial})
 
-
 def cabinet(request, user_id):
     cart = Cart.objects.first() 
     if request.method == 'POST' and request.user.is_authenticated :
@@ -114,17 +108,24 @@ def cabinet(request, user_id):
         # Clear IMG after POST request
         input_value = request.POST.get('link_input')
         if input_value:
-            number = get_active_tasks()
+            number = get_active_tasks.delay()
             result = execute_lama.delay(number, input_value)
             print(f"Lama {number} started")
-            id = result.id
+            task_id = result.id
             while True:
-                task = current_app.AsyncResult(id)
+                task = current_app.AsyncResult(task_id)
                 time.sleep(1)
                 if task.status == "SUCCESS":
                     print(f"Thread {number}: OK") 
                     delete_task(number)
                     break
+
+            # Добавим возврат ID задачи
+            response_data = {
+                'task_id': str(task_id),
+                'status': 'SUCCESS'
+            }
+            return JsonResponse(response_data)
             
             # Add info for Clear History
             if "kn.kz" in input_value:
@@ -160,6 +161,7 @@ def cabinet(request, user_id):
 
             # Sort out images
             photos = os.listdir(f'{static_out_users_dir}/{user_id}/{clear_history_id}')
+            photos.remove('info_list.txt')
             photos.sort()
 
             with open(f'{static_out_users_dir}/{user_id}/{clear_history_id}/info_list.txt', 'r', encoding='utf-8') as file:
@@ -244,17 +246,23 @@ def register_request(request):
     if validate:  
         try:      
             user = User.objects.create_user(username=email, email=email, password=password)
+            print("Пользователь создан")
             clear_email = email
             clear_count = 3
             clear_bonus_count = 0
             clear_tarif = 'Пробный'
             user_clear_count = ClearCount.objects.create(email=clear_email,count=clear_count,tarif=clear_tarif,bonus_count=clear_bonus_count)
-        except Exception:
+            print("Очистки добавлены")
+        except Exception as ex:
+            print(ex)
             reg_error_msg = "Пользователь с данным адресом электронной почты уже зарегистрирован"
             return render(request, "service/index.html", {"reg_error_msg": reg_error_msg})
-        serializer = URLSafeTimedSerializer(settings.SECRET_KEY)
-        token = serializer.dumps(user.id)
-        confirm_url = request.build_absolute_uri(reverse('confirm_email', kwargs={'token': token}))
+        try:
+            serializer = URLSafeTimedSerializer(settings.SECRET_KEY)
+            token = serializer.dumps(user.id)
+            confirm_url = request.build_absolute_uri(reverse('confirm_email', kwargs={'token': token}))
+        except Exception as ex:
+            print(ex) 
         try:
             email = EmailMessage(
                 'Подтверждение почты',
@@ -266,7 +274,8 @@ def register_request(request):
             user.save()
             user_clear_count.save()
             email.send()
-        except:
+        except Exception as ex:
+            print(ex)
             reg_error_msg = "Проверьте адрес электронной почты"
             return render(request, "service/index.html", {"reg_error_msg": reg_error_msg})
     
@@ -343,12 +352,9 @@ def price_cabinet(request, user_id):
     cart_expert = cart.expert_price_tn/(cart.expert_bonus+cart.expert_quantity)
     return render(request, 'service/price_cabinet.html', {"user_id": user_id,"cart":cart , "cart_beginer" : cart_beginer, "cart_advanced": cart_advanced, "cart_expert": cart_expert, "cart_trial": cart_trial})
 
-
-
 def partner(request, user_id):
     ref_url = str(request.build_absolute_uri(reverse('homepage')) + xor_encrypt_decrypt(request.user.username, "secret_key"))
     return render(request, 'service/partner.html',{"user_id": user_id, "ref_url" : ref_url})
-
 
 def history(request, user_id):
     user_request = ClearHistory.objects.filter(user=user_id)
@@ -412,3 +418,14 @@ def open_photos(request, user_id, element_id):
         data = file.read()
         context = data
     return render(request, 'service/history.html',{"user_id": user_id, 'photos': photos, 'dt': element_id,'context': context, 'user_request': user_request, **data_from_base})
+
+def download_image(request,user_id,filename,clear_history_id):
+    photo_path = f"{static_out_users_dir}/{user_id}/{clear_history_id}/{filename}"
+    if os.path.exists(photo_path):
+        print(photo_path)
+        response = FileResponse(open(photo_path, 'rb'))
+        response['Content-Disposition'] = 'attachment; filename="photo.jpg"'
+        return response
+    else:
+        # Обработка ситуации, когда файл не найден
+        return HttpResponse("Фото не найдено", status=404)

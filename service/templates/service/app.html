@@ -676,7 +676,7 @@
                                             class="bg-white p-3  flex justify-center items-center rounded-[10px] h-[200px] w-[200px] cursor-pointer transition-[all_300ms_easy-in-out] hover:scale-[99%] flex-col">
                                                 <img class="block h-full w-full rounded-[10px] object-cover "
                                                     src="{% static 'users_out/' %}{{ user_id }}/{{ dt }}/{{photo}}" alt="Готовые фото" loading="lazy" onclick="showModal('{{ photo }}')" name="photo">
-                                                <a href="{%url 'download_image' user_id=user_id filename=photo  %}" name="download_link"><span class="flex items-center gap-5">Скачать фото</span></a>
+                                                <a href="{%url 'download_image' user_id=user_id filename=photo clear_history_id=dt %}" name="download_link"><span class="flex items-center gap-5">Скачать фото</span></a>
                                         </div>
                                         {% endfor %}
                                     </div>

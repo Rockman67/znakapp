@@ -52,10 +52,10 @@ def parsing_krisha_kz(link):
         i = 0
         download_links = [] # список, куда будут заноситься ссылки наши на скачивание изображения
         while i <= count_of_click:
-            image_link = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[6]/div/div/div/div/img")))
+            image_link = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[5]/div/div/div/div/img")))
             download_links.append(image_link.get_attribute('src'))
             #next_img = driver.find_element(By.XPATH,'/html/body/div[6]/div/div/div/a[2]')
-            next_img = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[6]/div/div/div/a[2]")))
+            next_img = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[5]/div/div/div/a[2]")))
             next_img.click()
             time.sleep(0.5)
             i+=1
